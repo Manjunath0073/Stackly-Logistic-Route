@@ -1,0 +1,1307 @@
+/* =====================================================
+   Route Optimization Page Styles
+   ===================================================== */
+
+/* ---------- Section 1: Hero ---------- */
+.ro-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 4rem;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.ro-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 40%, rgba(6, 182, 212, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 60%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ro-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, black 25%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 25%, transparent 65%);
+}
+
+.ro-hero-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ro-hero-content {
+  max-width: 580px;
+}
+
+.ro-hero-title {
+  font-size: clamp(2.5rem, 4.2vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.ro-hero-title-accent {
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ro-hero-desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.ro-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.ro-hero-stats {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.ro-hero-stat {
+  text-align: left;
+}
+
+.ro-hero-stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.ro-hero-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* Hero Visual - Premium Photo Composition */
+.ro-hero-visual {
+  position: relative;
+  height: 520px;
+}
+
+.ro-hero-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.ro-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ro-photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(200deg, rgba(3, 7, 18, 0.05) 0%, rgba(3, 7, 18, 0.35) 55%, rgba(3, 7, 18, 0.82) 100%);
+}
+
+.ro-photo-route {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-violet), transparent);
+  border-radius: 2px;
+  opacity: 0.7;
+  box-shadow: 0 0 18px var(--color-accent-glow);
+}
+
+.ro-photo-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  animation: roFloatCard 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+.ro-photo-badge-top {
+  top: 14%;
+  right: 6%;
+  animation-delay: 2.4s;
+}
+
+.ro-photo-badge-bottom {
+  bottom: 22%;
+  left: 6%;
+  animation-delay: 2.9s;
+}
+
+.ro-badge-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(6, 182, 212, 0.18);
+  color: var(--color-accent-light);
+}
+
+.ro-badge-icon-violet {
+  background: rgba(139, 92, 246, 0.18);
+  color: #A78BFA;
+}
+
+.ro-badge-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ro-badge-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+@keyframes roFloatCard {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Section 2: Optimization Engine ---------- */
+.ro-engine {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg-elevated);
+  position: relative;
+  overflow: hidden;
+}
+
+.ro-engine-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.ro-engine-visual {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 1.1;
+}
+
+.ro-engine-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 0 60px rgba(6, 182, 212, 0.2), 0 0 120px rgba(6, 182, 212, 0.1);
+  z-index: 2;
+}
+
+.ro-engine-icon {
+  color: var(--color-accent);
+}
+
+.ro-engine-label {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ro-engine-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 50%;
+  animation: roEngineRingSpin 30s linear infinite;
+}
+
+@keyframes roEngineRingSpin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.ro-engine-ring-2 {
+  width: 400px;
+  height: 400px;
+  border-color: rgba(139, 92, 246, 0.1);
+  animation-duration: 45s;
+  animation-direction: reverse;
+}
+
+.ro-engine-inputs {
+  position: absolute;
+  inset: 0;
+}
+
+.ro-engine-input {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: default;
+  transition: transform var(--transition-base);
+}
+
+.ro-engine-input:hover {
+  transform: scale(1.05);
+}
+
+.ro-engine-input-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ro-engine-input:hover .ro-engine-input-icon {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+.ro-engine-input-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.ro-engine-input-desc {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.ro-engine-input:hover .ro-engine-input-desc {
+  opacity: 1;
+}
+
+.ro-engine-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  transform-origin: left center;
+  opacity: 0.2;
+  animation: roEngineLinePulse 3s ease-in-out infinite;
+}
+
+@keyframes roEngineLinePulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+}
+
+/* Position inputs around center */
+.ro-engine-input:nth-child(1) { top: 2%; left: 50%; transform: translateX(-50%); }
+.ro-engine-input:nth-child(2) { top: 18%; right: 5%; }
+.ro-engine-input:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); }
+.ro-engine-input:nth-child(4) { bottom: 18%; right: 5%; }
+.ro-engine-input:nth-child(5) { bottom: 2%; left: 50%; transform: translateX(-50%); }
+.ro-engine-input:nth-child(6) { bottom: 18%; left: 5%; }
+.ro-engine-input:nth-child(7) { top: 50%; left: 0; transform: translateY(-50%); }
+.ro-engine-input:nth-child(8) { top: 18%; left: 5%; }
+
+/* ---------- Section 3: Before vs After ---------- */
+.ro-compare {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.ro-compare-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.ro-compare-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ro-compare-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  position: relative;
+}
+
+.ro-compare-panel {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.ro-compare-panel:hover {
+  transform: translateY(-4px);
+}
+
+.ro-compare-panel-before:hover {
+  border-color: rgba(244, 63, 94, 0.3);
+}
+
+.ro-compare-panel-after:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.ro-compare-panel-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ro-compare-badge {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.375rem 0.875rem;
+  border-radius: 100px;
+}
+
+.ro-compare-badge-before {
+  background: rgba(244, 63, 94, 0.12);
+  color: var(--color-rose);
+}
+
+.ro-compare-badge-after {
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--color-accent);
+}
+
+.ro-compare-badge-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.ro-compare-map {
+  height: 280px;
+  position: relative;
+  background: rgba(3, 7, 18, 0.5);
+  overflow: hidden;
+}
+
+.ro-compare-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ro-compare-map-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.25) 0%, transparent 45%, rgba(3, 7, 18, 0.75) 100%);
+}
+
+.ro-compare-map-tag {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(3, 7, 18, 0.55);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ro-compare-panel-before .ro-compare-map-tag {
+  color: var(--color-rose);
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.ro-compare-panel-after .ro-compare-map-tag {
+  color: var(--color-accent-light);
+  border-color: rgba(6, 182, 212, 0.25);
+}
+
+.ro-compare-map svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ro-compare-route-before {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.ro-compare-route-before.revealed {
+  animation: roCompareRouteIn 2s ease-out forwards;
+}
+
+.ro-compare-route-after {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.ro-compare-route-after.revealed {
+  animation: roCompareRouteIn 2s 0.3s ease-out forwards;
+}
+
+@keyframes roCompareRouteIn {
+  to { stroke-dashoffset: 0; }
+}
+
+.ro-compare-metrics {
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.ro-compare-metric {
+  text-align: center;
+}
+
+.ro-compare-metric-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.ro-compare-metric-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.ro-compare-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.ro-compare-divider-inner {
+  width: 56px;
+  height: 56px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
+}
+
+.ro-compare-savings {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.ro-compare-savings-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.ro-compare-savings-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.ro-compare-savings-item {
+  text-align: center;
+}
+
+.ro-compare-savings-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.ro-compare-savings-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ---------- Section 4: Multi-Stop Planning ---------- */
+.ro-multistop {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg-elevated);
+}
+
+.ro-multistop-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.ro-multistop-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ro-multistop-dashboard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.ro-multistop-dash-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(248, 250, 252, 0.02);
+}
+
+.ro-multistop-dash-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.ro-multistop-dash-live {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--color-emerald);
+  font-weight: 600;
+}
+
+.ro-multistop-dash-live-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-emerald);
+  border-radius: 50%;
+  animation: roLiveDot 1.5s ease-in-out infinite;
+}
+
+@keyframes roLiveDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.ro-multistop-dash-body {
+  padding: 1.5rem;
+}
+
+.ro-multistop-map {
+  height: 320px;
+  background: rgba(3, 7, 18, 0.5);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.ro-multistop-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ro-multistop-map-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.3) 0%, transparent 50%, rgba(3, 7, 18, 0.7) 100%);
+}
+
+.ro-multistop-map-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 999px;
+  background: rgba(3, 7, 18, 0.6);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--color-accent-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.ro-multistop-map svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ro-multistop-stops {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ro-multistop-stop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: rgba(248, 250, 252, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease-out;
+}
+
+.ro-multistop-stop.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ro-multistop-stop-num {
+  width: 28px;
+  height: 28px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.ro-multistop-stop-info {
+  flex: 1;
+}
+
+.ro-multistop-stop-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.ro-multistop-stop-address {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.ro-multistop-stop-time {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.ro-multistop-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ro-multistop-timeline-item {
+  padding: 1.5rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base);
+}
+
+.ro-multistop-timeline-item:hover {
+  border-color: var(--color-accent);
+}
+
+.ro-multistop-timeline-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.ro-multistop-timeline-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.ro-multistop-timeline-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Section 5: Dynamic Rerouting ---------- */
+.ro-reroute {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.ro-reroute-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ro-reroute-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ro-reroute-visual {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.ro-reroute-scene {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.ro-reroute-scene-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ro-reroute-scene-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.ro-reroute-scene-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  border-radius: 100px;
+  transition: all 0.5s ease;
+}
+
+.ro-reroute-status-normal {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-emerald);
+}
+
+.ro-reroute-status-alert {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--color-amber);
+}
+
+.ro-reroute-status-rerouted {
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--color-accent);
+}
+
+.ro-reroute-scene-body {
+  padding: 2rem;
+  min-height: 400px;
+  position: relative;
+}
+
+.ro-reroute-map {
+  height: 360px;
+  background: rgba(3, 7, 18, 0.5);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.ro-reroute-map svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ro-reroute-alert {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-amber);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  max-width: 280px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+
+.ro-reroute-alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ro-reroute-alert-icon {
+  color: var(--color-amber);
+  margin-bottom: 0.5rem;
+}
+
+.ro-reroute-alert-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.ro-reroute-alert-text {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.ro-reroute-route-original {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s ease, opacity 0.5s ease;
+}
+
+.ro-reroute-route-original.hidden {
+  stroke-dashoffset: 800;
+  opacity: 0;
+}
+
+.ro-reroute-route-new {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ro-reroute-route-new.show {
+  stroke-dashoffset: 0;
+}
+
+.ro-reroute-vehicle-marker {
+  transition: transform 1s ease;
+}
+
+.ro-reroute-result {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: var(--color-bg-glass);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.ro-reroute-result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ro-reroute-result-item {
+  text-align: center;
+}
+
+.ro-reroute-result-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.ro-reroute-result-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.ro-reroute-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.ro-reroute-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.ro-reroute-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.ro-reroute-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ---------- Section 6: CTA ---------- */
+.ro-cta {
+  padding: calc(var(--section-padding-y) * 1.3) 0;
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.ro-cta-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ro-cta-bg svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+}
+
+.ro-cta-route {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: roCtaRouteDraw 4s ease-out forwards;
+}
+
+@keyframes roCtaRouteDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+.ro-cta-route-2 {
+  animation-delay: 0.5s;
+}
+
+.ro-cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ro-cta-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.ro-cta-desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+.ro-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ro-cta-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .ro-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .ro-hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .ro-hero-actions {
+    justify-content: center;
+  }
+
+  .ro-hero-stats {
+    justify-content: center;
+  }
+
+  .ro-hero-visual {
+    max-width: 600px;
+    margin: 0 auto;
+    height: 400px;
+  }
+
+  .ro-engine-visual {
+    max-width: 700px;
+  }
+
+  .ro-compare-panels {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .ro-compare-divider {
+    display: none;
+  }
+
+  .ro-multistop-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ro-hero {
+    min-height: auto;
+    padding: 7rem 0 3rem;
+  }
+
+  .ro-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .ro-hero-visual {
+    height: 320px;
+  }
+
+  .ro-photo-badge {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .ro-badge-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ro-engine-input {
+    transform: scale(0.85);
+  }
+
+  .ro-engine-input:nth-child(1),
+  .ro-engine-input:nth-child(5) {
+    transform: translateX(-50%) scale(0.85);
+  }
+
+  .ro-engine-input:nth-child(3),
+  .ro-engine-input:nth-child(7) {
+    transform: translateY(-50%) scale(0.85);
+  }
+
+  .ro-compare-metrics {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .ro-multistop-timeline {
+    gap: 0.75rem;
+  }
+
+  .ro-reroute-scene-body {
+    padding: 1rem;
+  }
+
+  .ro-reroute-result {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .ro-cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ro-cta-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ro-hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .ro-hero-stat {
+    text-align: center;
+  }
+
+  .ro-engine-input {
+    transform: scale(0.7);
+  }
+
+  .ro-engine-input:nth-child(1),
+  .ro-engine-input:nth-child(5) {
+    transform: translateX(-50%) scale(0.7);
+  }
+
+  .ro-engine-input:nth-child(3),
+  .ro-engine-input:nth-child(7) {
+    transform: translateY(-50%) scale(0.7);
+  }
+
+  .ro-engine-center {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ro-compare-savings-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ro-reroute-controls {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ro-route-primary,
+  .ro-route-secondary,
+  .ro-route-ghost,
+  .ro-compare-route-before,
+  .ro-compare-route-after,
+  .ro-cta-route,
+  .ro-reroute-route-new {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+
+  .ro-engine-ring,
+  .ro-multistop-dash-live-dot,
+  .roLiveDot {
+    animation: none !important;
+  }
+
+  .ro-multistop-stop,
+  .ro-reroute-alert,
+  .ro-reroute-result {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .ro-photo-badge {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

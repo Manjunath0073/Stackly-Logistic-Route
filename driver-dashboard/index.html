@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Stackly Route Driver Dashboard - Navigate, deliver, and complete routes with real-time logistics intelligence.">
+  <meta name="theme-color" content="#030712">
+  <title>Driver Dashboard | Stackly Route</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="css/driver.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body class="drv-body">
+
+  <!-- Access Denied -->
+  <div class="drv-access-denied" id="access-denied" style="display:none;">
+    <div class="drv-access-denied-card">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-rose);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <h2>Access Denied</h2>
+      <p>You do not have permission to access the Driver Dashboard. This area is restricted to Drivers / Field Operators.</p>
+      <a href="../pages/login.html" class="btn btn-primary" style="margin-top:1rem;">Go to Login</a>
+    </div>
+  </div>
+
+  <!-- Dashboard App Shell -->
+  <div class="drv-app" id="drv-app" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside class="drv-sidebar" id="sidebar" aria-label="Dashboard navigation">
+      <div class="drv-sidebar-header">
+        <a href="../index.html" class="drv-logo" aria-label="Stackly Route Home">
+          <img src="../assets/logo-icon.webp" alt="" width="28" height="28" loading="eager">
+          <span class="drv-logo-text">Stackly<span class="accent">Route</span></span>
+        </a>
+        <button class="drv-sidebar-close" id="sidebar-close" aria-label="Close sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <nav class="drv-sidebar-nav" role="navigation">
+        <ul class="drv-nav-list" role="menubar">
+          <li role="none"><a href="#overview" class="drv-nav-link active" role="menuitem" data-view="overview" data-title="Dashboard Overview">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Overview</span>
+          </a></li>
+          <li role="none"><a href="#route" class="drv-nav-link" role="menuitem" data-view="route" data-title="My Route">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+            <span>My Route</span>
+          </a></li>
+          <li role="none"><a href="#deliveries" class="drv-nav-link" role="menuitem" data-view="deliveries" data-title="Deliveries">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a1 1 0 0 1-1 1h-1"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Deliveries</span>
+          </a></li>
+          <li role="none"><a href="#schedule" class="drv-nav-link" role="menuitem" data-view="schedule" data-title="Schedule">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Schedule</span>
+          </a></li>
+          <li role="none"><a href="#performance" class="drv-nav-link" role="menuitem" data-view="performance" data-title="Performance">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span>Performance</span>
+          </a></li>
+          <li role="none"><a href="#profile" class="drv-nav-link" role="menuitem" data-view="profile" data-title="Profile & Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <span>Settings</span>
+          </a></li>
+        </ul>
+      </nav>
+
+      <div class="drv-sidebar-footer">
+        <div class="drv-sidebar-user" id="sidebar-user">
+          <div class="drv-avatar" id="sidebar-avatar">DR</div>
+          <div class="drv-sidebar-user-info">
+            <span class="drv-sidebar-user-name" id="sidebar-user-name">Driver</span>
+            <span class="drv-sidebar-user-role">Driver / Field Operator</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Sidebar Backdrop (mobile) -->
+    <div class="drv-sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- Main Content Area -->
+    <div class="drv-main-wrap">
+
+      <!-- Top Bar -->
+      <header class="drv-topbar" role="banner">
+        <div class="drv-topbar-left">
+          <button class="drv-hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <h1 class="drv-topbar-title" id="topbar-title">Dashboard Overview</h1>
+        </div>
+        <div class="drv-topbar-right">
+          <button class="drv-topbar-icon-btn" id="notif-btn" aria-label="Notifications" aria-haspopup="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="drv-notif-badge">3</span>
+          </button>
+          <div class="drv-profile" id="profile-trigger" tabindex="0" role="button" aria-label="User menu" aria-haspopup="true" aria-expanded="false">
+            <div class="drv-avatar drv-avatar-sm" id="topbar-avatar">DR</div>
+            <div class="drv-profile-info">
+              <span class="drv-profile-name" id="topbar-user-name">Driver</span>
+              <span class="drv-profile-role">Driver / Field Operator</span>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+          <!-- Profile Dropdown -->
+          <div class="drv-profile-dropdown" id="profile-dropdown" role="menu" aria-label="User menu">
+            <div class="drv-profile-dropdown-header">
+              <div class="drv-avatar" id="dropdown-avatar">DR</div>
+              <div>
+                <div class="drv-profile-dropdown-name" id="dropdown-name">Driver</div>
+                <div class="drv-profile-dropdown-email" id="dropdown-email">driver@company.com</div>
+              </div>
+            </div>
+            <div class="drv-profile-dropdown-divider"></div>
+            <a href="#profile" class="drv-profile-dropdown-item" role="menuitem" data-view="profile">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              Account Settings
+            </a>
+            <button class="drv-profile-dropdown-item" id="logout-btn" role="menuitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="drv-content" id="drv-content" role="main">
+        <!-- Views rendered here by JS -->
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="drv-toast" id="drv-toast" role="status" aria-live="polite"></div>
+
+  <script src="js/driver.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+/* =====================================================
+   Responsive Design
+   ===================================================== */
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  :root {
+    --container-padding: 4rem;
+  }
+}
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  .navbar-container {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    justify-self: end;
+  }
+
+  .navbar-logo {
+    justify-self: start;
+  }
+
+  .navbar-auth {
+    display: none;
+  }
+
+  /* Story */
+  .story-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .story-transform {
+    order: -1;
+    margin: 1rem 0;
+  }
+
+  /* Features */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-card-large,
+  .feature-card-wide {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  /* Process */
+  .process-line {
+    display: none;
+  }
+
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .process-step {
+    max-width: 400px;
+  }
+
+  .process-step:nth-child(even) .process-card {
+    order: -1;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-intro {
+    grid-column: span 2;
+    text-align: center;
+    align-items: center;
+  }
+
+  .stat-card-large {
+    grid-row: auto;
+  }
+
+  /* Visibility */
+  .visibility-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Footer */
+  .footer-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 5vw, 3rem);
+    row-gap: 3rem;
+  }
+}
+
+/* Small tablet portrait */
+@media (max-width: 900px) {
+  .footer-columns {
+    column-gap: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 7rem 0 5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-trust {
+    flex-direction: column;
+    text-align: center;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Dashboard */
+  .dashboard-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  /* Features */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card,
+  .feature-card-large,
+  .feature-card-wide {
+    grid-column: span 1;
+  }
+
+  .feature-card-wide {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-intro,
+  .stat-card-large {
+    grid-column: span 1;
+  }
+
+  .stat-card-large {
+    grid-row: auto;
+  }
+
+  /* Testimonial */
+  .testimonial-featured {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .testimonial-quote p {
+    font-size: var(--text-lg);
+  }
+
+  .testimonial-metrics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Insights */
+  .insights-actions {
+    flex-direction: column;
+  }
+
+  .insights-actions .btn {
+    width: 100%;
+  }
+
+  /* Final CTA */
+  .final-cta-actions {
+    flex-direction: column;
+  }
+
+  .final-cta-actions .btn {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer-columns {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer-column {
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .footer-newsletter-input {
+    text-align: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-links a:hover {
+    transform: none;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .footer {
+    padding-top: 4rem;
+  }
+
+  .footer-top {
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-columns {
+    row-gap: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .footer-newsletter-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Small height screens */
+@media (max-height: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+}

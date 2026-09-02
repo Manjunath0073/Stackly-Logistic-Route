@@ -1,0 +1,1132 @@
+/* =====================================================
+   Solutions Page Styles
+   ===================================================== */
+
+/* ---------- Section 1: Hero ---------- */
+.sol-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 4rem;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.sol-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.sol-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+.sol-hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sol-hero-content {
+  max-width: 560px;
+}
+
+.sol-hero-title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.sol-hero-title-accent {
+  background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sol-hero-desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.sol-hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sol-hero-visual {
+  position: relative;
+}
+
+.sol-hero-route {
+  width: 100%;
+  height: auto;
+}
+
+.sol-route-path {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: solRouteDraw 3s ease-out forwards;
+}
+
+.sol-route-path-2 {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: solRouteDraw 3s 0.5s ease-out forwards;
+}
+
+@keyframes solRouteDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+.sol-node {
+  opacity: 0;
+  animation: solNodePop 0.5s ease-out forwards;
+}
+
+.sol-node:nth-child(7) { animation-delay: 0.8s; }
+.sol-node:nth-child(9) { animation-delay: 1.2s; }
+.sol-node:nth-child(11) { animation-delay: 1.6s; }
+.sol-node:nth-child(13) { animation-delay: 2s; }
+
+@keyframes solNodePop {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.sol-pulse {
+  animation: solPulse 2.5s ease-out infinite;
+}
+
+@keyframes solPulse {
+  0% { r: 8; opacity: 0.4; }
+  100% { r: 30; opacity: 0; }
+}
+
+.sol-data-card {
+  opacity: 0;
+  animation: solCardFade 0.8s 1.5s ease-out forwards;
+}
+
+@keyframes solCardFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Section 2: Bento Overview ---------- */
+.sol-bento {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg-elevated);
+}
+
+.sol-bento-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.sol-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+.sol-bento-card {
+  position: relative;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sol-bento-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.sol-bento-card-lg {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+}
+
+.sol-bento-card-image {
+  grid-column: span 1;
+  position: relative;
+}
+
+.sol-bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.sol-bento-card-image:hover img {
+  transform: scale(1.04);
+}
+
+.sol-bento-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(3, 7, 18, 0.9));
+}
+
+.sol-bento-image-label {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.sol-bento-card-content {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sol-bento-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.sol-bento-icon-cyan { background: rgba(6, 182, 212, 0.1); color: var(--color-accent); }
+.sol-bento-icon-violet { background: rgba(139, 92, 246, 0.1); color: var(--color-violet); }
+.sol-bento-icon-emerald { background: rgba(16, 185, 129, 0.1); color: var(--color-emerald); }
+.sol-bento-icon-amber { background: rgba(245, 158, 11, 0.1); color: var(--color-amber); }
+
+.sol-bento-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.sol-bento-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.sol-bento-route-visual {
+  padding: 0 2rem 2rem;
+  opacity: 0.7;
+}
+
+.sol-bento-route-visual svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Section 3: Route Deep Dive ---------- */
+.sol-route {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg);
+}
+
+.sol-route-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sol-route-content .section-eyebrow,
+.sol-route-content .section-title,
+.sol-route-content .section-description {
+  text-align: left;
+}
+
+.sol-route-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1.75rem;
+}
+
+.sol-route-benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.sol-route-benefit-icon {
+  flex-shrink: 0;
+}
+
+.sol-route-compare {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.sol-route-panel {
+  flex: 1;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+  transition: border-color var(--transition-base);
+}
+
+.sol-route-before:hover { border-color: rgba(100, 116, 139, 0.3); }
+.sol-route-after:hover { border-color: rgba(6, 182, 212, 0.3); }
+
+.sol-route-label {
+  position: absolute;
+  top: -10px;
+  left: 1.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+}
+
+.sol-route-label-before {
+  background: #334155;
+  color: #94A3B8;
+}
+
+.sol-route-label-after {
+  background: rgba(6, 182, 212, 0.15);
+  color: var(--color-accent);
+}
+
+.sol-route-map {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.sol-route-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.sol-route-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sol-route-stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.sol-route-stat-better {
+  color: var(--color-accent) !important;
+}
+
+.sol-route-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.sol-route-divider {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---------- Section 4: Operations Selector ---------- */
+.sol-ops {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg-elevated);
+}
+
+.sol-ops .section-eyebrow,
+.sol-ops .section-title {
+  text-align: center;
+}
+
+.sol-ops-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.sol-ops-tab {
+  padding: 0.625rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.sol-ops-tab:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+.sol-ops-tab.active {
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.sol-ops-panels {
+  position: relative;
+  min-height: 420px;
+}
+
+.sol-ops-panel {
+  display: none;
+}
+
+.sol-ops-panel.active {
+  display: block;
+  animation: opsPanelFade 0.4s ease-out;
+}
+
+@keyframes opsPanelFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sol-ops-panel-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.sol-ops-panel-content {
+  padding: 3rem;
+}
+
+.sol-ops-panel-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.sol-ops-panel-desc {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.sol-ops-panel-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.sol-ops-panel-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.sol-ops-panel-features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.sol-ops-panel-visual {
+  height: 100%;
+  min-height: 340px;
+}
+
+.sol-ops-panel-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Section 5: Real-Time Visibility ---------- */
+.sol-visibility {
+  position: relative;
+  padding: var(--section-padding-y) 0 calc(var(--section-padding-y) * 1.2);
+  background: #050a14;
+  overflow: hidden;
+}
+
+.sol-vis-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sol-vis-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.sol-vis-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.sol-vis-glow-1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -100px;
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.sol-vis-glow-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -50px;
+  right: -50px;
+  background: rgba(139, 92, 246, 0.06);
+}
+
+.sol-vis-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sol-vis-dashboard {
+  position: relative;
+  z-index: 1;
+  background: rgba(17, 24, 39, 0.8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sol-vis-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(248, 250, 252, 0.02);
+}
+
+.sol-vis-dash-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.sol-vis-dash-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.sol-vis-dash-dots span:nth-child(1) { background: #F43F5E; }
+.sol-vis-dash-dots span:nth-child(2) { background: #F59E0B; }
+.sol-vis-dash-dots span:nth-child(3) { background: #10B981; }
+
+.sol-vis-dash-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.sol-vis-dash-live {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-emerald);
+}
+
+.sol-vis-live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--color-emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  animation: liveBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes liveBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.sol-vis-dash-body {
+  padding: 1.5rem;
+}
+
+.sol-vis-map {
+  position: relative;
+  background: rgba(3, 7, 18, 0.6);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.sol-vis-map-svg {
+  width: 100%;
+  height: auto;
+}
+
+.sol-vis-vehicle {
+  animation: vehiclePulse 3s ease-in-out infinite;
+}
+
+@keyframes vehiclePulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.sol-vis-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.sol-vis-stat {
+  text-align: center;
+  padding: 1.25rem;
+  background: rgba(248, 250, 252, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.sol-vis-stat-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.sol-vis-stat-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Section 6: Performance Impact ---------- */
+.sol-impact {
+  position: relative;
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.sol-impact-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sol-impact-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+.sol-impact-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--color-bg) 0%, rgba(3, 7, 18, 0.7) 50%, var(--color-bg) 100%);
+}
+
+.sol-impact-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sol-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sol-impact-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(8px);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.sol-impact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-strong);
+}
+
+.sol-impact-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.sol-impact-label {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.sol-impact-bar {
+  height: 4px;
+  background: rgba(148, 163, 184, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sol-impact-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sol-impact-card.revealed .sol-impact-bar-fill {
+  width: var(--bar-target);
+}
+
+/* ---------- Section 7: Integrations ---------- */
+.sol-integrations {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg-elevated);
+}
+
+.sol-int-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 4rem;
+}
+
+.sol-int-ecosystem {
+  position: relative;
+}
+
+.sol-eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(280px, 1fr);
+  gap: 1.25rem;
+}
+
+.sol-eco-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  min-height: 280px;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.sol-eco-card-wide {
+  grid-column: span 2;
+}
+
+.sol-eco-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.sol-eco-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.sol-eco-card:hover img {
+  transform: scale(1.05);
+}
+
+.sol-eco-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.05) 0%, rgba(3, 7, 18, 0.55) 55%, rgba(3, 7, 18, 0.96) 100%);
+  transition: background var(--transition-base);
+}
+
+.sol-eco-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  z-index: 1;
+}
+
+.sol-eco-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.625rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(6, 182, 212, 0.14);
+  border: 1px solid rgba(6, 182, 212, 0.28);
+  color: var(--color-accent-light);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sol-eco-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 0.9rem + 0.8vw, 1.375rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.sol-eco-desc {
+  font-size: var(--text-sm);
+  color: rgba(203, 213, 225, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 46ch;
+}
+
+.sol-eco-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sol-eco-chip {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.sol-eco-chip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+}
+
+/* ---------- Section 8: Solutions CTA ---------- */
+.sol-cta {
+  position: relative;
+  padding: calc(var(--section-padding-y) * 1.4) 0;
+  background: var(--color-bg);
+  overflow: hidden;
+  text-align: center;
+}
+
+.sol-cta-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sol-cta-routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sol-cta-path {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: solRouteDraw 4s ease-out forwards;
+}
+
+.sol-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.sol-cta-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.sol-cta-desc {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.sol-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.sol-cta-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .sol-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .sol-hero-content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .sol-hero-actions {
+    justify-content: center;
+  }
+
+  .sol-hero-visual {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .sol-route-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .sol-route-content .section-eyebrow,
+  .sol-route-content .section-title,
+  .sol-route-content .section-description {
+    text-align: center;
+  }
+
+  .sol-route-benefits {
+    max-width: 480px;
+    margin: 1.75rem auto 0;
+  }
+
+  .sol-ops-panel-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-ops-panel-visual {
+    min-height: 240px;
+  }
+
+  .sol-impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sol-int-ecosystem {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .sol-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-bento-card-lg {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .sol-route-compare {
+    flex-direction: column;
+  }
+
+  .sol-route-divider {
+    justify-content: center;
+    transform: rotate(90deg);
+  }
+
+  .sol-ops-selector {
+    gap: 0.375rem;
+  }
+
+  .sol-ops-tab {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-xs);
+  }
+
+  .sol-ops-panel-content {
+    padding: 2rem;
+  }
+
+  .sol-vis-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-eco-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .sol-eco-card {
+    min-height: 340px;
+  }
+
+  .sol-eco-card-wide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .sol-hero {
+    min-height: auto;
+    padding: 7rem 0 3rem;
+  }
+
+  .sol-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .sol-hero-actions {
+    flex-direction: column;
+  }
+
+  .sol-hero-actions .btn {
+    width: 100%;
+  }
+
+  .sol-ops-panel-features li {
+    font-size: var(--text-xs);
+  }
+
+  .sol-cta-actions {
+    flex-direction: column;
+  }
+
+  .sol-cta-actions .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .sol-route-path,
+  .sol-route-path-2,
+  .sol-cta-path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+
+  .sol-node,
+  .sol-data-card {
+    opacity: 1;
+    animation: none;
+  }
+
+  .sol-pulse {
+    animation: none;
+  }
+
+  .sol-vis-vehicle {
+    animation: none;
+  }
+
+  .sol-eco-card img {
+    transform: none;
+  }
+
+  .sol-ops-panel.active {
+    animation: none;
+  }
+}

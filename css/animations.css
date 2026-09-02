@@ -1,0 +1,105 @@
+/* =====================================================
+   Animations & Scroll Reveals
+   ===================================================== */
+
+/* Scroll reveal base states */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal-up.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* Stagger children */
+.reveal-up {
+  transition-delay: calc(var(--reveal-index, 0) * 80ms);
+}
+
+/* Hero entrance animations */
+.hero .reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroReveal 0.8s var(--transition-slow) forwards;
+}
+
+.hero .reveal-up:nth-child(1) { animation-delay: 0.2s; }
+.hero .reveal-up:nth-child(2) { animation-delay: 0.4s; }
+.hero .reveal-up:nth-child(3) { animation-delay: 0.6s; }
+.hero .reveal-up:nth-child(4) { animation-delay: 0.8s; }
+.hero .reveal-up:nth-child(5) { animation-delay: 1s; }
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text mask reveal for headings */
+.title-line {
+  overflow: hidden;
+}
+
+.title-line > span {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: lineReveal 0.8s var(--transition-slow) forwards;
+}
+
+.title-line:nth-child(1) > span { animation-delay: 0.4s; }
+.title-line:nth-child(2) > span { animation-delay: 0.6s; }
+
+@keyframes lineReveal {
+  to { transform: translateY(0); }
+}
+
+/* Feature card stagger */
+.feature-card.reveal-up {
+  transition-delay: calc(var(--feature-index, 0) * 100ms);
+}
+
+/* Process step stagger */
+.process-step.reveal-up {
+  transition-delay: calc(var(--step-index, 0) * 120ms);
+}
+
+/* Visibility list stagger */
+.visibility-list li.reveal-up {
+  transition-delay: calc(var(--item-index, 0) * 100ms);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .hero .reveal-up,
+  .title-line > span,
+  .feature-card.reveal-up,
+  .process-step.reveal-up,
+  .visibility-list li.reveal-up {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}

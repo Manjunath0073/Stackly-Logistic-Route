@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The page you're looking for doesn't exist. Let's get you back on route.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Page Not Found — Stackly Route</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+
+  <style>
+    /* =====================================================
+       Stackly Route — 404 Page (Premium)
+       ===================================================== */
+
+    :root {
+      --e-color-bg: #030712;
+      --e-color-bg-elevated: #0B1120;
+      --e-color-bg-card: #111827;
+      --e-color-accent: #06B6D4;
+      --e-color-accent-light: #22D3EE;
+      --e-color-accent-dark: #0891B2;
+      --e-color-accent-glow: rgba(6, 182, 212, 0.4);
+      --e-color-violet: #8B5CF6;
+      --e-color-violet-glow: rgba(139, 92, 246, 0.35);
+      --e-color-emerald: #10B981;
+      --e-color-amber: #F59E0B;
+      --e-color-rose: #F43F5E;
+      --e-color-text-primary: #F8FAFC;
+      --e-color-text-secondary: #94A3B8;
+      --e-color-text-muted: #64748B;
+      --e-color-border: rgba(148, 163, 184, 0.12);
+      --e-color-border-strong: rgba(148, 163, 184, 0.2);
+      --e-font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      --e-font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --e-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --e-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --e-transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--e-font-body);
+      background: var(--e-color-bg);
+      color: var(--e-color-text-secondary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+
+    :focus-visible {
+      outline: 2px solid var(--e-color-accent);
+      outline-offset: 3px;
+    }
+
+    /* ─── Page Shell ─── */
+    .page-404 {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      min-height: 100dvh;
+      position: relative;
+    }
+
+    /* ═══════════════════════════════════════
+       BACKGROUND LAYER
+       ═══════════════════════════════════════ */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(110% 80% at 85% -10%, rgba(139, 92, 246, 0.10) 0%, transparent 55%),
+        radial-gradient(110% 80% at 0% 110%, rgba(6, 182, 212, 0.10) 0%, transparent 55%),
+        linear-gradient(180deg, #04070F 0%, #030712 100%);
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 75%);
+    }
+
+    .bg-glow-1, .bg-glow-2 {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+    .bg-glow-1 {
+      top: -18%;
+      left: -8%;
+      width: 46vw;
+      height: 46vw;
+      background: radial-gradient(circle, var(--e-color-accent-glow) 0%, transparent 62%);
+      animation: glowFloat 14s ease-in-out infinite alternate;
+    }
+    .bg-glow-2 {
+      bottom: -16%;
+      right: -6%;
+      width: 44vw;
+      height: 44vw;
+      background: radial-gradient(circle, var(--e-color-violet-glow) 0%, transparent 62%);
+      animation: glowFloat 18s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes glowFloat {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(3vw, -2vh) scale(1.06); }
+    }
+
+    /* ═══════════════════════════════════════
+       MAIN
+       ═══════════════════════════════════════ */
+    .page-404-main {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 760px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ─── Status Badge ─── */
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.875rem;
+      border-radius: 999px;
+      border: 1px solid rgba(6, 182, 212, 0.22);
+      background: rgba(6, 182, 212, 0.08);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--e-color-accent-light);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: contentReveal 0.7s 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .error-badge .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--e-color-rose);
+      animation: pulseDot 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.4); }
+    }
+
+    /* ─── 404 Visual ─── */
+    .error-visual {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 230px;
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: contentReveal 0.7s 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .error-visual svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* ─── Headline ─── */
+    .error-headline {
+      font-family: var(--e-font-heading);
+      font-size: clamp(2rem, 1.5rem + 3vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--e-color-text-primary);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: contentReveal 0.7s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .error-headline .grad {
+      background: linear-gradient(120deg, var(--e-color-accent-light), var(--e-color-violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    /* ─── Description ─── */
+    .error-description {
+      font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.125rem);
+      color: var(--e-color-text-secondary);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto 2.25rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: contentReveal 0.7s 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* ─── Actions ─── */
+    .error-actions {
+      display: flex;
+      gap: 0.875rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: contentReveal 0.7s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .error-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--e-font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      transition: all var(--e-transition-base);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .error-btn-primary {
+      background: var(--e-color-accent);
+      color: var(--e-color-bg);
+      box-shadow: 0 0 0 rgba(6, 182, 212, 0);
+    }
+    .error-btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+      opacity: 0;
+      transition: opacity var(--e-transition-base);
+    }
+    .error-btn-primary:hover {
+      background: var(--e-color-accent-light);
+      box-shadow: 0 0 32px rgba(6, 182, 212, 0.28);
+      transform: translateY(-2px);
+    }
+    .error-btn-primary:hover::before { opacity: 1; }
+    .error-btn-primary:active { transform: translateY(0); }
+
+    .error-btn-outline {
+      background: transparent;
+      color: var(--e-color-text-primary);
+      border: 1px solid var(--e-color-border-strong);
+    }
+    .error-btn-outline:hover {
+      border-color: var(--e-color-accent);
+      color: var(--e-color-accent-light);
+      background: rgba(6, 182, 212, 0.06);
+      transform: translateY(-2px);
+    }
+    .error-btn-outline:active { transform: translateY(0); }
+
+    .error-btn svg { transition: transform var(--e-transition-base); flex-shrink: 0; }
+    .error-btn-primary:hover svg, .error-btn-outline:hover svg { transform: translateX(3px); }
+    .error-btn-outline.btn-back:hover svg { transform: translateX(-3px); }
+
+    /* ─── Quick Links ─── */
+    .quick-links {
+      width: 100%;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: contentReveal 0.7s 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .quick-links-title {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--e-color-text-muted);
+      margin-bottom: 1rem;
+    }
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.875rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .quick-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.125rem 0.875rem;
+      border-radius: 14px;
+      border: 1px solid var(--e-color-border);
+      background: var(--e-color-bg-card);
+      transition: all var(--e-transition-base);
+    }
+    .quick-link:hover {
+      border-color: var(--e-color-accent);
+      background: rgba(6, 182, 212, 0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    }
+    .quick-link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--e-color-accent);
+      transition: all var(--e-transition-base);
+    }
+    .quick-link:hover .quick-link-icon {
+      background: rgba(6, 182, 212, 0.18);
+      color: var(--e-color-accent-light);
+    }
+    .quick-link-icon.violet { background: rgba(139, 92, 246, 0.1); color: var(--e-color-violet); }
+    .quick-link:hover .quick-link-icon.violet { background: rgba(139, 92, 246, 0.18); color: #A78BFA; }
+    .quick-link-icon.emerald { background: rgba(16, 185, 129, 0.1); color: var(--e-color-emerald); }
+    .quick-link:hover .quick-link-icon.emerald { background: rgba(16, 185, 129, 0.18); color: #34D399; }
+    .quick-link-icon.amber { background: rgba(245, 158, 11, 0.1); color: var(--e-color-amber); }
+    .quick-link:hover .quick-link-icon.amber { background: rgba(245, 158, 11, 0.18); color: #FBBF24; }
+    .quick-link-text {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--e-color-text-secondary);
+    }
+    .quick-link:hover .quick-link-text { color: var(--e-color-text-primary); }
+
+    /* ─── System Labels ─── */
+    .system-labels {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: contentReveal 0.7s 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .system-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--e-color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    .system-label-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--e-color-rose);
+      animation: systemDot 2.5s ease-in-out infinite;
+    }
+    .system-label-dot.amber { background: var(--e-color-amber); animation-delay: 0.3s; }
+    .system-label-dot.muted { background: var(--e-color-text-muted); animation: none; }
+    @keyframes systemDot {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes contentReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══════════════════════════════════════
+       SVG ROUTE ANIMATIONS
+       ═══════════════════════════════════════ */
+    .route-broken-path {
+      stroke-dasharray: 420;
+      stroke-dashoffset: 420;
+      animation: routeDraw 2.2s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                 routeBreak 1s 2.9s ease-in-out forwards;
+    }
+    .route-good-path {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 320;
+      opacity: 0;
+      animation: routeAppear 0.3s 3.4s ease forwards,
+                 routeDraw 1.4s 3.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes routeDraw { to { stroke-dashoffset: 0; } }
+    @keyframes routeBreak {
+      0% { opacity: 1; }
+      50% { opacity: 1; stroke: var(--e-color-rose); }
+      100% { opacity: 0.35; stroke: var(--e-color-text-muted); }
+    }
+    @keyframes routeAppear { to { opacity: 1; } }
+
+    .route-node {
+      opacity: 0;
+      transform-origin: center;
+      animation: nodeAppear 0.4s ease forwards;
+    }
+    .route-node:nth-child(1) { animation-delay: 0.8s; }
+    .route-node:nth-child(2) { animation-delay: 1.15s; }
+    .route-node:nth-child(3) { animation-delay: 1.5s; }
+    .route-node:nth-child(4) { animation-delay: 2s; }
+    .route-node:nth-child(5) { animation-delay: 2.6s; }
+    @keyframes nodeAppear {
+      from { opacity: 0; transform: scale(0); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .vehicle-indicator {
+      offset-path: path('M40,170 C120,170 180,100 280,110 S420,160 520,130');
+      offset-distance: 0%;
+      animation: vehicleMove 2.8s 1s ease-in-out forwards,
+                 vehicleStop 0.3s 3.6s ease forwards;
+    }
+    @keyframes vehicleMove {
+      0% { offset-distance: 0%; opacity: 1; }
+      70% { offset-distance: 74%; opacity: 1; }
+      100% { offset-distance: 77%; opacity: 0.5; }
+    }
+
+    .broken-marker {
+      opacity: 0;
+      animation: markerPulse 2s 3.3s ease-in-out infinite;
+    }
+    @keyframes markerPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.85; }
+    }
+    .marker-x {
+      opacity: 0;
+      animation: markerFade 0.4s 3.6s ease forwards;
+    }
+    @keyframes markerFade { to { opacity: 1; } }
+    .good-route-node {
+      opacity: 0;
+      animation: nodeAppear 0.5s 4s ease forwards;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ */
+    .page-404-footer {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.25rem 2rem;
+      border-top: 1px solid var(--e-color-border);
+      background: rgba(3, 7, 18, 0.55);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--e-color-text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      color: var(--e-color-text-muted);
+      transition: color var(--e-transition-base);
+    }
+    .footer-links a:hover { color: var(--e-color-text-primary); }
+
+    /* ═══════════════════════════════════════
+       REDUCED MOTION
+       ═══════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .bg-glow-1, .bg-glow-2 { animation: none; }
+      .route-broken-path,
+      .route-good-path,
+      .route-node,
+      .vehicle-indicator,
+      .broken-marker,
+      .marker-x,
+      .good-route-node {
+        stroke-dashoffset: 0;
+        opacity: 1;
+        animation: none;
+      }
+      .error-badge,
+      .error-visual,
+      .error-headline,
+      .error-description,
+      .error-actions,
+      .quick-links,
+      .system-labels {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════ */
+    @media (max-width: 760px) {
+      .quick-links-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .page-404-footer {
+        padding: 1rem 1.25rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-404-main {
+        padding: 2rem 1rem 3rem;
+      }
+      .error-visual {
+        max-width: 360px;
+        height: 165px;
+        margin-bottom: 1.5rem;
+      }
+      .error-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+      .error-btn { width: 100%; }
+      .system-labels {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .page-404-footer { justify-content: center; text-align: center; }
+    }
+
+    @media (max-height: 620px) {
+      .page-404-main { padding-top: 2rem; padding-bottom: 2.5rem; }
+      .error-visual { height: 150px; margin-bottom: 1.25rem; }
+      .error-headline { font-size: clamp(1.75rem, 1.5rem + 2vw, 2.5rem); }
+      .error-actions { margin-bottom: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-404">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main -->
+    <main class="page-404-main" id="main-content">
+      <div class="bg-layer" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="bg-glow-1"></div>
+        <div class="bg-glow-2"></div>
+      </div>
+
+      <div class="content-wrapper">
+        <!-- 404 Visual -->
+        <div class="error-visual" aria-hidden="true">
+          <svg viewBox="0 0 520 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="eTextGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F8FAFC"/>
+                <stop offset="50%" stop-color="#94A3B8"/>
+                <stop offset="100%" stop-color="#F8FAFC"/>
+              </linearGradient>
+              <linearGradient id="eRouteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#06B6D4" stop-opacity="0"/>
+                <stop offset="30%" stop-color="#06B6D4"/>
+                <stop offset="70%" stop-color="#06B6D4"/>
+                <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="eGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 404 Numbers -->
+            <text x="260" y="150" text-anchor="middle"
+              font-family="'Space Grotesk', system-ui, sans-serif"
+              font-size="128" font-weight="700" fill="url(#eTextGrad)"
+              letter-spacing="-4" opacity="0.92">
+              404
+            </text>
+
+            <!-- Route entering the 4, breaking at the second 4 -->
+            <path class="route-broken-path"
+              d="M30,180 C80,180 100,128 160,118 S250,148 300,108 S370,128 420,98 S460,108 490,92"
+              stroke="url(#eRouteGrad)" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#eGlow)"/>
+
+            <!-- Good route toward "Home" -->
+            <path class="route-good-path"
+              d="M420,98 C442,98 452,92 472,102 S502,118 545,112"
+              stroke="#10B981" stroke-width="2" stroke-linecap="round" fill="none" opacity="0"
+              filter="url(#eGlow)"/>
+
+            <!-- Vehicle along the route -->
+            <g class="vehicle-indicator">
+              <circle r="5" fill="#06B6D4" opacity="0.3"/>
+              <circle r="3" fill="#06B6D4"/>
+            </g>
+
+            <!-- Route nodes -->
+            <circle class="route-node" cx="160" cy="118" r="4" fill="#06B6D4"/>
+            <circle class="route-node" cx="300" cy="108" r="5" fill="#06B6D4"/>
+            <circle class="route-node" cx="420" cy="98" r="4" fill="#F43F5E" opacity="0.8"/>
+
+            <!-- Broken marker at the end -->
+            <g class="broken-marker" transform="translate(420, 98)">
+              <circle r="12" fill="none" stroke="#F43F5E" stroke-width="1.5" opacity="0.6"/>
+              <circle r="18" fill="none" stroke="#F43F5E" stroke-width="0.5" opacity="0.3"/>
+            </g>
+            <g class="marker-x" transform="translate(420, 98)">
+              <line x1="-4" y1="-4" x2="4" y2="4" stroke="#F43F5E" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4" y1="-4" x2="-4" y2="4" stroke="#F43F5E" stroke-width="2" stroke-linecap="round"/>
+            </g>
+
+            <!-- Good route node -->
+            <circle class="good-route-node" cx="545" cy="112" r="5" fill="#10B981"/>
+          </svg>
+        </div>
+
+        <!-- Status badge -->
+        <div class="error-badge">
+          <span class="pulse-dot"></span>
+          <span>Navigation Error · Route Unavailable</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="error-headline">Looks Like You've<br>Went Off Route<span class="grad">.</span></h1>
+
+        <!-- Description -->
+        <p class="error-description">
+          The page you're looking for doesn't exist or may have been moved.
+          Let's get you back to where you need to be.
+        </p>
+
+        <!-- Actions -->
+        <div class="error-actions">
+          <button class="error-btn error-btn-outline btn-back" id="goBackBtn" aria-label="Go back to previous page">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <span>Go Back</span>
+          </button>
+          <a href="index.html" class="error-btn error-btn-primary" id="goHomeBtn" aria-label="Go to homepage">
+            <span>Go to Home</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Quick links -->
+        <div class="quick-links">
+          <p class="quick-links-title">Popular Destinations</p>
+          <div class="quick-links-grid">
+            <a href="pages/route-optimization.html" class="quick-link">
+              <span class="quick-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>
+              <span class="quick-link-text">Route Optimization</span>
+            </a>
+            <a href="pages/solutions.html" class="quick-link">
+              <span class="quick-link-icon violet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+              <span class="quick-link-text">Solutions</span>
+            </a>
+            <a href="pages/analytics.html" class="quick-link">
+              <span class="quick-link-icon emerald"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+              <span class="quick-link-text">Analytics</span>
+            </a>
+            <a href="pages/contact.html" class="quick-link">
+              <span class="quick-link-icon amber"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
+              <span class="quick-link-text">Contact</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- System labels -->
+        <div class="system-labels" aria-hidden="true">
+          <div class="system-label">
+            <span class="system-label-dot"></span>
+            <span>Route Status: Lost</span>
+          </div>
+          <div class="system-label">
+            <span class="system-label-dot amber"></span>
+            <span>Distance: Unknown</span>
+          </div>
+          <div class="system-label">
+            <span class="system-label-dot muted"></span>
+            <span>Stackly Route v3.2</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-404-footer">
+      <p class="footer-copy">&copy; 2026 Stackly Route. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="pages/about.html">About</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/login.html">Log In</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Go Back with fallback
+    var goBackBtn = document.getElementById('goBackBtn');
+    if (goBackBtn) {
+      goBackBtn.addEventListener('click', function () {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'index.html';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

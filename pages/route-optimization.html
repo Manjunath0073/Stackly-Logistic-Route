@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-powered route optimization that reduces fuel costs, accelerates deliveries, and finds the smartest route for every delivery in your fleet.">
+  <title>Route Optimization | Stackly Route</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/route-optimization.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="navbar scrolled" id="navbar" role="banner" data-navbar-permanent>
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <a href="../index.html" class="logo-link" aria-label="Stackly Route Home"><img src="../assets/logo-stackly.webp" alt="Stackly Route" width="180" height="40" loading="eager"></a>
+      </div>
+      <nav class="navbar-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="route-optimization.html" class="nav-link active" aria-current="page">Route Optimization</a></li>
+          <li><a href="analytics.html" class="nav-link">Analytics</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-indicator" aria-hidden="true"></div>
+      </nav>
+      <div class="navbar-auth">
+        <a href="login.html" class="btn btn-text">Log In</a>
+        <a href="../404.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-head">
+        <a href="../index.html" class="mobile-menu-logo" aria-label="Stackly Route Home">
+          <img src="../assets/logo-stackly.webp" alt="Stackly Route" width="128" height="28" loading="eager">
+        </a>
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-content">
+        <p class="mobile-menu-eyebrow">Menu</p>
+        <ul class="mobile-nav-list">
+          <li><a href="../index.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="mobile-nav-label">Home</span></a></li>
+          <li><a href="solutions.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><span class="mobile-nav-label">Solutions</span></a></li>
+          <li><a href="route-optimization.html" class="mobile-nav-link active" aria-current="page"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span><span class="mobile-nav-label">Route Optimization</span></a></li>
+          <li><a href="analytics.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span><span class="mobile-nav-label">Analytics</span></a></li>
+          <li><a href="about.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span><span class="mobile-nav-label">About</span></a></li>
+          <li><a href="contact.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span><span class="mobile-nav-label">Contact</span></a></li>
+        </ul>
+        <div class="mobile-auth">
+          <a href="../404.html" class="btn btn-outline btn-full">Log In</a>
+          <a href="../404.html" class="btn btn-primary btn-full">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+  <main id="main-content">
+
+    <!-- =====================================================
+         SECTION 1: Route Optimization Hero
+         ===================================================== -->
+    <section class="ro-hero" aria-labelledby="ro-hero-heading">
+      <div class="ro-hero-bg" aria-hidden="true"></div>
+      <div class="ro-hero-grid" aria-hidden="true"></div>
+      <div class="container">
+        <div class="ro-hero-layout">
+          <div class="ro-hero-content">
+            <p class="section-eyebrow reveal-up">Route Optimization</p>
+            <h1 class="ro-hero-title reveal-up" id="ro-hero-heading">
+              Every Mile,<br>
+              <span class="ro-hero-title-accent">Intelligently Calculated.</span>
+            </h1>
+            <p class="ro-hero-desc reveal-up">Our AI analyzes thousands of variables in real time to discover the smartest route for every delivery—reducing costs, saving fuel, and getting packages there faster.</p>
+            <div class="ro-hero-actions reveal-up">
+              <a href="../404.html" class="btn btn-primary btn-lg">
+                <span>Start Optimizing</span>
+                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href="../404.html" class="btn btn-outline btn-lg">See How It Works</a>
+            </div>
+            <div class="ro-hero-stats reveal-up">
+              <div class="ro-hero-stat">
+                <div class="ro-hero-stat-value">99.8%</div>
+                <div class="ro-hero-stat-label">ETA Accuracy</div>
+              </div>
+              <div class="ro-hero-stat">
+                <div class="ro-hero-stat-value">2.5M+</div>
+                <div class="ro-hero-stat-label">Routes Optimized</div>
+              </div>
+              <div class="ro-hero-stat">
+                <div class="ro-hero-stat-value">32%</div>
+                <div class="ro-hero-stat-label">Fuel Savings</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ro-hero-visual reveal-right">
+            <div class="ro-hero-photo">
+              <img src="../assets/images/ro-hero-main.webp" alt="Delivery truck on an optimized logistics route" loading="eager" width="1100" height="733">
+              <div class="ro-photo-shade" aria-hidden="true"></div>
+              <div class="ro-photo-route" aria-hidden="true"></div>
+              <div class="ro-photo-badge ro-photo-badge-top">
+                <span class="ro-badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                <div>
+                  <div class="ro-badge-label">Route Optimized</div>
+                  <div class="ro-badge-value">4 stops · 38 km</div>
+                </div>
+              </div>
+              <div class="ro-photo-badge ro-photo-badge-bottom">
+                <span class="ro-badge-icon ro-badge-icon-violet"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+                <div>
+                  <div class="ro-badge-label">ETA Accuracy</div>
+                  <div class="ro-badge-value">99.8%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2: The Optimization Engine
+         ===================================================== -->
+    <section class="ro-engine" id="engine" aria-labelledby="ro-engine-heading">
+      <div class="container">
+        <div class="ro-engine-header">
+          <p class="section-eyebrow reveal-up">The Engine</p>
+          <h2 class="section-title reveal-up" id="ro-engine-heading">How Our AI Finds the Perfect Route</h2>
+          <p class="section-description reveal-up">Our optimization engine considers every variable simultaneously—traffic patterns, delivery windows, vehicle capacity, fuel efficiency, and road conditions—to generate the most efficient route possible.</p>
+        </div>
+
+        <div class="ro-engine-visual reveal-up" aria-label="Optimization engine data flow visualization">
+          <!-- Center Engine -->
+          <div class="ro-engine-center">
+            <svg class="ro-engine-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              <circle cx="12" cy="12" r="4"/>
+            </svg>
+            <span class="ro-engine-label">AI Engine</span>
+          </div>
+
+          <!-- Rings -->
+          <div class="ro-engine-ring" aria-hidden="true"></div>
+          <div class="ro-engine-ring ro-engine-ring-2" aria-hidden="true"></div>
+
+          <!-- Data inputs around center -->
+          <div class="ro-engine-inputs">
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Traffic</span>
+              <span class="ro-engine-input-desc">Real-time congestion data</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 18a5 5 0 0 0-10 0"/><line x1="12" y1="9" x2="12" y2="2"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/><line x1="23" y1="22" x2="1" y2="22"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Weather</span>
+              <span class="ro-engine-input-desc">Precipitation & wind conditions</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Time Windows</span>
+              <span class="ro-engine-input-desc">Delivery schedule constraints</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Vehicle Capacity</span>
+              <span class="ro-engine-input-desc">Load & weight limits</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Driver Hours</span>
+              <span class="ro-engine-input-desc">HOS compliance rules</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Fuel Efficiency</span>
+              <span class="ro-engine-input-desc">Eco-routing preferences</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Road Conditions</span>
+              <span class="ro-engine-input-desc">Surface & construction data</span>
+            </div>
+            <div class="ro-engine-input">
+              <div class="ro-engine-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              </div>
+              <span class="ro-engine-input-label">Delivery Priority</span>
+              <span class="ro-engine-input-desc">SLA & customer preferences</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 3: Before vs After Route Comparison
+         ===================================================== -->
+    <section class="ro-compare" id="compare" aria-labelledby="ro-compare-heading">
+      <div class="container">
+        <div class="ro-compare-header">
+          <p class="section-eyebrow reveal-up">The Transformation</p>
+          <h2 class="section-title reveal-up" id="ro-compare-heading">Watch Your Routes Transform</h2>
+          <p class="section-description reveal-up">See the measurable difference between manual planning and AI-optimized routing across distance, time, and fuel consumption.</p>
+        </div>
+
+        <div class="ro-compare-container">
+          <div class="ro-compare-panels">
+            <!-- Before Panel -->
+            <div class="ro-compare-panel ro-compare-panel-before reveal-left">
+              <div class="ro-compare-panel-header">
+                <span class="ro-compare-badge ro-compare-badge-before">Before</span>
+                <span class="ro-compare-badge-label">Manual Planning</span>
+              </div>
+              <div class="ro-compare-map">
+                <img src="../assets/images/ro-compare-before.webp" alt="Congested manual delivery route" loading="lazy" width="900" height="600">
+                <div class="ro-compare-map-shade" aria-hidden="true"></div>
+                <div class="ro-compare-map-tag">Overlapping · 142 km</div>
+              </div>
+              <div class="ro-compare-metrics">
+                <div class="ro-compare-metric">
+                  <div class="ro-compare-metric-value">142 km</div>
+                  <div class="ro-compare-metric-label">Distance</div>
+                </div>
+                <div class="ro-compare-metric">
+                  <div class="ro-compare-metric-value">5h 10m</div>
+                  <div class="ro-compare-metric-label">Duration</div>
+                </div>
+                <div class="ro-compare-metric">
+                  <div class="ro-compare-metric-value">High</div>
+                  <div class="ro-compare-metric-label">Fuel Usage</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="ro-compare-divider" aria-hidden="true">
+              <div class="ro-compare-divider-inner">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#030712" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- After Panel -->
+            <div class="ro-compare-panel ro-compare-panel-after reveal-right">
+              <div class="ro-compare-panel-header">
+                <span class="ro-compare-badge ro-compare-badge-after">After</span>
+                <span class="ro-compare-badge-label">Stackly Route AI</span>
+              </div>
+              <div class="ro-compare-map">
+                <img src="../assets/images/ro-compare-after.webp" alt="Optimized single-pass delivery route" loading="lazy" width="900" height="600">
+                <div class="ro-compare-map-shade" aria-hidden="true"></div>
+                <div class="ro-compare-map-tag">Optimized · 104 km</div>
+              </div>
+              <div class="ro-compare-metrics">
+                <div class="ro-compare-metric">
+                  <div class="ro-compare-metric-value" style="color: var(--color-accent)">104 km</div>
+                  <div class="ro-compare-metric-label">Distance</div>
+                </div>
+                <div class="ro-compare-metric">
+                  <div class="ro-compare-metric-value" style="color: var(--color-accent)">3h 45m</div>
+                  <div class="ro-compare-metric-label">Duration</div>
+                </div>
+                <div class="ro-compare-metric">
+                  <div class="ro-compare-metric-value" style="color: var(--color-accent)">-28%</div>
+                  <div class="ro-compare-metric-label">Fuel Usage</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Savings Summary -->
+          <div class="ro-compare-savings reveal-up">
+            <h3 class="ro-compare-savings-title">Total Optimization Impact</h3>
+            <div class="ro-compare-savings-grid">
+              <div class="ro-compare-savings-item">
+                <div class="ro-compare-savings-value">27%</div>
+                <div class="ro-compare-savings-label">Less Distance Traveled</div>
+              </div>
+              <div class="ro-compare-savings-item">
+                <div class="ro-compare-savings-value">25%</div>
+                <div class="ro-compare-savings-label">Faster Delivery Time</div>
+              </div>
+              <div class="ro-compare-savings-item">
+                <div class="ro-compare-savings-value">$1,240</div>
+                <div class="ro-compare-savings-label">Monthly Fuel Savings</div>
+              </div>
+              <div class="ro-compare-savings-item">
+                <div class="ro-compare-savings-value">42%</div>
+                <div class="ro-compare-savings-label">Fewer Route Conflicts</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4: Multi-Stop Route Planning
+         ===================================================== -->
+    <section class="ro-multistop" id="multistop" aria-labelledby="ro-multistop-heading">
+      <div class="container">
+        <div class="ro-multistop-header">
+          <p class="section-eyebrow reveal-up">Scale Without Limits</p>
+          <h2 class="section-title reveal-up" id="ro-multistop-heading">From 5 Stops to 500 Stops</h2>
+          <p class="section-description reveal-up">Optimize the entire journey no matter the complexity. Our engine handles multi-stop deliveries, sequencing, and real-time adjustments at any scale.</p>
+        </div>
+
+        <div class="ro-multistop-layout">
+          <!-- Dashboard Panel -->
+          <div class="ro-multistop-dashboard reveal-left">
+            <div class="ro-multistop-dash-header">
+              <span class="ro-multistop-dash-title">Route Planner</span>
+              <span class="ro-multistop-dash-live">
+                <span class="ro-multistop-dash-live-dot"></span>
+                8 Stops Optimized
+              </span>
+            </div>
+            <div class="ro-multistop-dash-body">
+              <div class="ro-multistop-map" aria-hidden="true">
+                <img src="../assets/images/ro-multistop-hub.webp" alt="Fulfillment hub for multi-stop planning" loading="lazy" width="800" height="600">
+                <div class="ro-multistop-map-shade"></div>
+                <div class="ro-multistop-map-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+                  8 Stops Optimized
+                </div>
+              </div>
+
+              <div class="ro-multistop-stops">
+                <div class="ro-multistop-stop">
+                  <span class="ro-multistop-stop-num">1</span>
+                  <div class="ro-multistop-stop-info">
+                    <div class="ro-multistop-stop-name">Distribution Center Alpha</div>
+                    <div class="ro-multistop-stop-address">120 Industrial Blvd, Portland</div>
+                  </div>
+                  <span class="ro-multistop-stop-time">08:00</span>
+                </div>
+                <div class="ro-multistop-stop">
+                  <span class="ro-multistop-stop-num">2</span>
+                  <div class="ro-multistop-stop-info">
+                    <div class="ro-multistop-stop-name">Portland Retail Hub</div>
+                    <div class="ro-multistop-stop-address">450 Commerce St</div>
+                  </div>
+                  <span class="ro-multistop-stop-time">08:45</span>
+                </div>
+                <div class="ro-multistop-stop">
+                  <span class="ro-multistop-stop-num">3</span>
+                  <div class="ro-multistop-stop-info">
+                    <div class="ro-multistop-stop-name">Eastside Medical Supply</div>
+                    <div class="ro-multistop-stop-address">78 Health Park Dr</div>
+                  </div>
+                  <span class="ro-multistop-stop-time">09:20</span>
+                </div>
+                <div class="ro-multistop-stop">
+                  <span class="ro-multistop-stop-num">4</span>
+                  <div class="ro-multistop-stop-info">
+                    <div class="ro-multistop-stop-name">Tech Campus Warehouse</div>
+                    <div class="ro-multistop-stop-address">320 Innovation Way</div>
+                  </div>
+                  <span class="ro-multistop-stop-time">09:55</span>
+                </div>
+                <div class="ro-multistop-stop">
+                  <span class="ro-multistop-stop-num">5</span>
+                  <div class="ro-multistop-stop-info">
+                    <div class="ro-multistop-stop-name">South Bay Fulfillment</div>
+                    <div class="ro-multistop-stop-address">900 Harbor View Rd</div>
+                  </div>
+                  <span class="ro-multistop-stop-time">10:30</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline / Summary -->
+          <div class="ro-multistop-timeline reveal-right">
+            <div class="ro-multistop-timeline-item">
+              <div class="ro-multistop-timeline-label">Total Distance</div>
+              <div class="ro-multistop-timeline-value">186 km</div>
+              <div class="ro-multistop-timeline-desc">Optimized from 264 km (29% reduction)</div>
+            </div>
+            <div class="ro-multistop-timeline-item">
+              <div class="ro-multistop-timeline-label">Estimated Time</div>
+              <div class="ro-multistop-timeline-value">4h 12m</div>
+              <div class="ro-multistop-timeline-desc">Including all 8 delivery windows</div>
+            </div>
+            <div class="ro-multistop-timeline-item">
+              <div class="ro-multistop-timeline-label">Fuel Savings</div>
+              <div class="ro-multistop-timeline-value">$127</div>
+              <div class="ro-multistop-timeline-desc">Compared to manually planned route</div>
+            </div>
+            <div class="ro-multistop-timeline-item">
+              <div class="ro-multistop-timeline-label">Optimization Score</div>
+              <div class="ro-multistop-timeline-value">94/100</div>
+              <div class="ro-multistop-timeline-desc">Top 3% of all route plans generated today</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5: Real-Time Dynamic Rerouting
+         ===================================================== -->
+    <section class="ro-reroute" id="reroute" aria-labelledby="ro-reroute-heading">
+      <div class="ro-reroute-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="ro-reroute-header">
+          <p class="section-eyebrow reveal-up">Dynamic Intelligence</p>
+          <h2 class="section-title reveal-up" id="ro-reroute-heading">When the Road Changes, Your Route Adapts</h2>
+          <p class="section-description reveal-up">Traffic incidents, road closures, and unexpected delays don't disrupt your operations. Our AI detects disruptions and recalculates optimal routes in seconds.</p>
+        </div>
+
+        <div class="ro-reroute-visual reveal-up">
+          <div class="ro-reroute-scene">
+            <div class="ro-reroute-scene-header">
+              <span class="ro-reroute-scene-title">Live Route Monitor</span>
+              <span class="ro-reroute-scene-status ro-reroute-status-normal">Route Normal</span>
+            </div>
+            <div class="ro-reroute-scene-body">
+              <div class="ro-reroute-map" aria-hidden="true">
+                <svg viewBox="0 0 800 360" fill="none">
+                  <defs>
+                    <pattern id="rerouteGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(148,163,184,0.05)" stroke-width="0.5"/>
+                    </pattern>
+                  </defs>
+                  <rect width="800" height="360" fill="url(#rerouteGrid)"/>
+
+                  <!-- Original route (will be hidden on reroute) -->
+                  <path class="ro-reroute-route-original" d="M60,300 C160,300 200,240 320,200 S480,140 580,120 S700,80 740,60" fill="none" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"/>
+
+                  <!-- New optimized route (shown after reroute) -->
+                  <path class="ro-reroute-route-new" d="M60,300 C140,300 180,260 280,220 S400,180 500,200 S620,240 700,180 S740,120 740,60" fill="none" stroke="#06B6D4" stroke-width="3" stroke-linecap="round"/>
+
+                  <!-- Disruption zone -->
+                  <rect x="420" y="140" width="80" height="60" rx="4" fill="#F59E0B" fill-opacity="0.08" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+                  <text x="460" y="175" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#F59E0B" opacity="0.7">CONGESTION</text>
+
+                  <!-- Vehicle marker -->
+                  <g class="ro-reroute-vehicle-marker" transform="translate(280, 220)">
+                    <circle r="10" fill="#06B6D4" fill-opacity="0.15"/>
+                    <circle r="5" fill="#06B6D4"/>
+                    <circle r="3" fill="#fff"/>
+                  </g>
+
+                  <!-- Start/End nodes -->
+                  <circle cx="60" cy="300" r="6" fill="#06B6D4"/>
+                  <circle cx="60" cy="300" r="12" fill="#06B6D4" opacity="0.15"/>
+                  <circle cx="740" cy="60" r="7" fill="#06B6D4"/>
+                  <circle cx="740" cy="60" r="14" fill="#06B6D4" opacity="0.15"/>
+                </svg>
+
+                <!-- Alert overlay -->
+                <div class="ro-reroute-alert">
+                  <div class="ro-reroute-alert-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  </div>
+                  <div class="ro-reroute-alert-title">Traffic Congestion Detected</div>
+                  <div class="ro-reroute-alert-text">Heavy traffic on Highway 26. Recalculating optimal route...</div>
+                </div>
+
+                <!-- Result overlay -->
+                <div class="ro-reroute-result">
+                  <div class="ro-reroute-result-item">
+                    <div class="ro-reroute-result-value">-18 km</div>
+                    <div class="ro-reroute-result-label">New Distance</div>
+                  </div>
+                  <div class="ro-reroute-result-item">
+                    <div class="ro-reroute-result-value">-24 min</div>
+                    <div class="ro-reroute-result-label">Time Saved</div>
+                  </div>
+                  <div class="ro-reroute-result-item">
+                    <div class="ro-reroute-result-value">-12%</div>
+                    <div class="ro-reroute-result-label">Fuel Impact</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <div class="ro-reroute-controls">
+                <button class="ro-reroute-btn active" data-state="normal">Normal</button>
+                <button class="ro-reroute-btn" data-state="alert">Disruption</button>
+                <button class="ro-reroute-btn" data-state="rerouted">Rerouted</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6: Route Optimization CTA
+         ===================================================== -->
+    <section class="ro-cta" aria-labelledby="ro-cta-heading">
+      <div class="ro-cta-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 400" fill="none" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="roCtaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#06B6D4" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path class="ro-cta-route" d="M-50,200 C150,200 250,120 400,160 S600,280 800,200 S1000,120 1250,180" fill="none" stroke="url(#roCtaGrad)" stroke-width="2"/>
+          <path class="ro-cta-route ro-cta-route-2" d="M-50,280 C100,280 200,200 350,240 S550,320 750,260 S950,180 1250,240" fill="none" stroke="url(#roCtaGrad)" stroke-width="1.5"/>
+          <!-- Node dots -->
+          <circle cx="400" cy="160" r="4" fill="#06B6D4" opacity="0.4"/>
+          <circle cx="800" cy="200" r="4" fill="#06B6D4" opacity="0.4"/>
+          <circle cx="200" cy="240" r="3" fill="#8B5CF6" opacity="0.3"/>
+          <circle cx="600" cy="280" r="3" fill="#8B5CF6" opacity="0.3"/>
+          <circle cx="1000" cy="220" r="3" fill="#06B6D4" opacity="0.3"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="ro-cta-content">
+          <p class="section-eyebrow reveal-up">Get Started</p>
+          <h2 class="ro-cta-title reveal-up" id="ro-cta-heading">Stop Guessing.<br>Start Optimizing.</h2>
+          <p class="ro-cta-desc reveal-up">Join 2,400+ logistics teams using Stackly Route to plan smarter routes, cut fuel costs, and deliver faster—starting today.</p>
+          <div class="ro-cta-actions reveal-up">
+            <a href="../404.html" class="btn btn-primary btn-lg">
+              <span>Start Free Trial</span>
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="../404.html" class="btn btn-outline btn-lg">Talk to Sales</a>
+          </div>
+          <p class="ro-cta-note reveal-up">No credit card required · Full platform access for 14 days · Cancel anytime</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-bg" aria-hidden="true">
+      <div class="footer-grid"></div>
+      <div class="footer-glow"></div>
+    </div>
+    <div class="container">
+      <div class="footer-top">
+        <a href="../index.html" class="footer-logo" aria-label="Stackly Route Home"><img src="../assets/logo-stackly.webp" alt="Stackly Route" width="220" height="48" loading="lazy"></a>
+        <p class="footer-tagline">Intelligent route optimization for the future of logistics.</p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3 class="footer-column-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="route-optimization.html">Route Optimization</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Product</h3>
+          <ul class="footer-links">
+            <li><a href="../404.html">Route Planning</a></li>
+            <li><a href="../404.html">Fleet Tracking</a></li>
+            <li><a href="../404.html">Smart ETA</a></li>
+            <li><a href="../404.html">Cost Optimization</a></li>
+            <li><a href="../404.html">Proof of Delivery</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Company</h3>
+          <ul class="footer-links">
+            <li><a href="../404.html">Careers</a></li>
+            <li><a href="../404.html">Pricing</a></li>
+            <li><a href="../404.html">Resources</a></li>
+            <li><a href="../404.html">Blog</a></li>
+            <li><a href="../404.html">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Newsletter</h3>
+          <p class="footer-newsletter-text">Get the latest on route optimization, fleet intelligence, and logistics insights.</p>
+          <form class="footer-newsletter" id="footerNewsletter" novalidate>
+            <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+            <input type="email" id="footerNewsletterEmail" class="footer-newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+          </form>
+          <p class="footer-newsletter-note" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Stackly Route. All rights reserved.</p>
+        <div class="footer-legal">
+        </div>
+        <div class="footer-social">
+          <a href="../404.html" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="../404.html" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="../404.html" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/route-optimization.js"></script>
+</body>
+</html>

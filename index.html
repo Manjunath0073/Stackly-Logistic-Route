@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Route - AI-powered logistics route optimization for smarter fleet management, real-time tracking, and predictive delivery intelligence.">
+  <title>Stackly Route | AI-Powered Logistics Route Optimization</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar-container">
+
+      <div class="navbar-logo">
+        <a href="index.html" class="logo-link" aria-label="Stackly Route Home"><img src="assets/logo-stackly.webp" alt="Stackly Route" width="180" height="40" loading="eager"></a>
+      </div>
+
+      <nav class="navbar-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="pages/solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="pages/route-optimization.html" class="nav-link">Route Optimization</a></li>
+          <li><a href="pages/analytics.html" class="nav-link">Analytics</a></li>
+          <li><a href="pages/about.html" class="nav-link">About</a></li>
+
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-indicator" aria-hidden="true"></div>
+      </nav>
+      <div class="navbar-auth">
+        <a href="pages/login.html" class="btn btn-text">Log In</a>
+        <a href="404.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-head">
+        <a href="index.html" class="mobile-menu-logo" aria-label="Stackly Route Home">
+          <img src="assets/logo-stackly.webp" alt="Stackly Route" width="128" height="28" loading="eager">
+        </a>
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="mobile-menu-content">
+        <p class="mobile-menu-eyebrow">Menu</p>
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link active" aria-current="page"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span class="mobile-nav-label">Home</span></a></li>
+          <li><a href="pages/solutions.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span><span class="mobile-nav-label">Solutions</span></a></li>
+          <li><a href="pages/route-optimization.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span><span class="mobile-nav-label">Route Optimization</span></a></li>
+          <li><a href="pages/analytics.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span><span class="mobile-nav-label">Analytics</span></a></li>
+          <li><a href="pages/about.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span><span class="mobile-nav-label">About</span></a></li>
+          <li><a href="pages/contact.html" class="mobile-nav-link"><span class="mobile-nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span><span class="mobile-nav-label">Contact</span></a></li>
+        </ul>
+        <div class="mobile-auth">
+          <a href="404.html" class="btn btn-outline btn-full">Log In</a>
+          <a href="404.html" class="btn btn-primary btn-full">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+  <main id="main-content">
+    <!-- Section 1: Cinematic Hero -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero-media">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-fallback.webp" aria-hidden="true">
+          <source src="assets/video/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-routes" aria-hidden="true">
+        <svg class="route-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#06B6D4" stop-opacity="0" />
+              <stop offset="50%" stop-color="#06B6D4" stop-opacity="1" />
+              <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path class="route-path route-path-1" d="M-50,300 C150,300 250,150 450,180 S700,400 900,320 S1150,250 1250,280" fill="none" stroke="url(#routeGradient)" stroke-width="2"/>
+          <path class="route-path route-path-2" d="M-50,420 C200,420 300,500 500,450 S750,350 950,420 S1150,480 1250,440" fill="none" stroke="url(#routeGradient)" stroke-width="1.5"/>
+          <path class="route-path route-path-3" d="M-50,180 C180,180 320,280 520,220 S720,120 920,200 S1120,260 1250,220" fill="none" stroke="url(#routeGradient)" stroke-width="1"/>
+          <circle class="route-node" cx="450" cy="180" r="4" fill="#06B6D4"/>
+          <circle class="route-node" cx="900" cy="320" r="5" fill="#06B6D4"/>
+          <circle class="route-node" cx="500" cy="450" r="3" fill="#8B5CF6"/>
+          <circle class="route-node" cx="950" cy="420" r="4" fill="#8B5CF6"/>
+          <circle class="route-node" cx="520" cy="220" r="3" fill="#06B6D4"/>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          <span>AI-Powered Logistics Intelligence</span>
+        </div>
+        <h1 class="hero-title reveal-up">
+          <span class="title-line">Every Route.</span>
+          <span class="title-line title-line-accent">Intelligently Optimized.</span>
+        </h1>
+        <p class="hero-description reveal-up">
+          Reduce fuel costs, accelerate deliveries, and unlock complete fleet visibility with predictive route optimization that learns your network.
+        </p>
+        <div class="hero-actions reveal-up">
+          <a href="404.html" class="btn btn-primary btn-lg">
+            <span>Optimize Your Fleet</span>
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="404.html" class="btn btn-outline btn-lg">See How It Works</a>
+        </div>
+        <div class="hero-trust reveal-up">
+          <div class="trust-avatars">
+            <span class="trust-avatar">F</span>
+            <span class="trust-avatar">E</span>
+            <span class="trust-avatar">A</span>
+            <span class="trust-avatar">+</span>
+          </div>
+          <p class="trust-text">Trusted by 2,400+ logistics leaders worldwide</p>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Section 2: Trust / Partner Marquee -->
+    <section class="marquee-section" aria-label="Trusted partners">
+      <div class="marquee-header">
+        <p class="section-eyebrow reveal-up">Trusted by industry leaders</p>
+      </div>
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <span class="marquee-item">Velocity Freight</span>
+            <span class="marquee-item">CargoCore</span>
+            <span class="marquee-item">TransGlobal</span>
+            <span class="marquee-item">Fleetwise</span>
+            <span class="marquee-item">ParcelOne</span>
+            <span class="marquee-item">RouteNine</span>
+            <span class="marquee-item">LogiChain</span>
+            <span class="marquee-item">DriveNorth</span>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span class="marquee-item">Velocity Freight</span>
+            <span class="marquee-item">CargoCore</span>
+            <span class="marquee-item">TransGlobal</span>
+            <span class="marquee-item">Fleetwise</span>
+            <span class="marquee-item">ParcelOne</span>
+            <span class="marquee-item">RouteNine</span>
+            <span class="marquee-item">LogiChain</span>
+            <span class="marquee-item">DriveNorth</span>
+          </div>
+        </div>
+        <div class="marquee-fade marquee-fade-left" aria-hidden="true"></div>
+        <div class="marquee-fade marquee-fade-right" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Problem -> Solution Story -->
+    <section class="story-section" id="story" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story-header">
+          <p class="section-eyebrow reveal-up">The Logistics Challenge</p>
+          <h2 class="section-title reveal-up" id="story-heading">From Operational Friction to Intelligent Flow</h2>
+        </div>
+
+        <div class="story-comparison">
+          <div class="story-side story-problem reveal-left">
+            <div class="story-label">Before</div>
+            <h3 class="story-title">Static routes. Reactive decisions.</h3>
+            <ul class="story-list">
+              <li>
+                <span class="story-icon story-icon-negative" aria-hidden="true"></span>
+                <div>
+                  <strong>Delayed deliveries</strong>
+                  <span>Unexpected traffic and manual planning cause missed windows.</span>
+                </div>
+              </li>
+              <li>
+                <span class="story-icon story-icon-negative" aria-hidden="true"></span>
+                <div>
+                  <strong>Rising fuel costs</strong>
+                  <span>Inefficient mileage drains margins every quarter.</span>
+                </div>
+              </li>
+              <li>
+                <span class="story-icon story-icon-negative" aria-hidden="true"></span>
+                <div>
+                  <strong>Poor fleet visibility</strong>
+                  <span>Drivers and dispatchers operate on disconnected data.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="story-transform" aria-hidden="true">
+            <div class="transform-orb">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="38" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+                <path d="M28 40h24M44 32l8 8-8 8" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="story-side story-solution reveal-right">
+            <div class="story-label story-label-solution">After Stackly Route</div>
+            <h3 class="story-title">Adaptive routes. Predictive control.</h3>
+            <ul class="story-list">
+              <li>
+                <span class="story-icon story-icon-positive" aria-hidden="true"></span>
+                <div>
+                  <strong>On-time, every time</strong>
+                  <span>Real-time ETAs adjust to traffic, weather, and capacity.</span>
+                </div>
+              </li>
+              <li>
+                <span class="story-icon story-icon-positive" aria-hidden="true"></span>
+                <div>
+                  <strong>Fuel-optimized miles</strong>
+                  <span>AI reduces empty miles and selects the most efficient path.</span>
+                </div>
+              </li>
+              <li>
+                <span class="story-icon story-icon-positive" aria-hidden="true"></span>
+                <div>
+                  <strong>Unified command center</strong>
+                  <span>One platform connects planners, drivers, and customers.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: AI Route Optimization Showcase -->
+    <section class="showcase-section" id="showcase" aria-labelledby="showcase-heading">
+      <div class="showcase-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="showcase-header">
+          <p class="section-eyebrow reveal-up">Route Optimization Engine</p>
+          <h2 class="section-title reveal-up" id="showcase-heading">Optimize the Entire Network in Seconds</h2>
+          <p class="section-description reveal-up">
+            Our AI evaluates millions of route permutations, constraints, and real-world variables to deliver the optimal plan before your fleet leaves the depot.
+          </p>
+        </div>
+
+        <div class="dashboard reveal-up">
+          <div class="dashboard-header">
+            <div class="dashboard-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="dashboard-title">Stackly Route Command</div>
+            <div class="dashboard-live">
+              <span class="live-dot" aria-hidden="true"></span>
+              Live Optimization
+            </div>
+          </div>
+          <div class="dashboard-body">
+            <div class="map-canvas" aria-hidden="true">
+              <svg class="map-svg" viewBox="0 0 800 420" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(148,163,184,0.08)" stroke-width="1"/>
+                  </pattern>
+                  <linearGradient id="optimizedGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#06B6D4"/>
+                    <stop offset="100%" stop-color="#22D3EE"/>
+                  </linearGradient>
+                  <linearGradient id="originalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#475569"/>
+                    <stop offset="100%" stop-color="#64748B"/>
+                  </linearGradient>
+                </defs>
+                <rect width="800" height="420" fill="url(#gridPattern)"/>
+                <path class="map-route-original" d="M60,340 C180,340 220,200 360,220 S520,280 640,140 S740,100 760,80" fill="none" stroke="url(#originalGradient)" stroke-width="3" stroke-dasharray="8 6"/>
+                <path class="map-route-optimized" d="M60,340 C160,320 240,260 360,240 S500,220 640,160 S740,120 760,80" fill="none" stroke="url(#optimizedGradient)" stroke-width="3"/>
+                <circle cx="60" cy="340" r="6" fill="#06B6D4"/>
+                <circle cx="360" cy="240" r="5" fill="#F8FAFC"/>
+                <circle cx="640" cy="160" r="5" fill="#F8FAFC"/>
+                <circle cx="760" cy="80" r="7" fill="#06B6D4"/>
+                <g class="map-vehicle" transform="translate(360,240)">
+                  <circle r="8" fill="#06B6D4" fill-opacity="0.2"/>
+                  <circle r="4" fill="#06B6D4"/>
+                </g>
+              </svg>
+              <div class="map-overlay">
+                <div class="map-card">
+                  <span class="map-card-label">Distance Saved</span>
+                  <span class="map-card-value">-18%</span>
+                </div>
+              </div>
+            </div>
+            <div class="dashboard-metrics">
+              <div class="metric-card">
+                <div class="metric-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-value" data-count="32">0</span><span class="metric-suffix">%</span>
+                  <span class="metric-label">Less Fuel Usage</span>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-value" data-count="18">0</span><span class="metric-suffix">%</span>
+                  <span class="metric-label">Faster Deliveries</span>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/></svg>
+                </div>
+                <div class="metric-info">
+                  <span class="metric-value" data-count="24">0</span><span class="metric-suffix">%</span>
+                  <span class="metric-label">Lower OpEx</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Core Features -->
+    <section class="features-section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="features-header">
+          <p class="section-eyebrow reveal-up">Core Capabilities</p>
+          <h2 class="section-title reveal-up" id="features-heading">Intelligence Across Every Mile</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card feature-card-large reveal-up">
+            <div class="feature-glow" aria-hidden="true"></div>
+            <div class="feature-content">
+              <div class="feature-icon-wrap">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="m12 2 8 10H4l8-10z"/></svg>
+              </div>
+              <h3 class="feature-title">AI Route Planning</h3>
+              <p class="feature-text">Generate optimal multi-stop routes considering traffic, delivery windows, vehicle capacity, driver hours, and customer priorities.</p>
+              <a href="pages/route-optimization.html" class="feature-link">Explore routing <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="feature-visual" aria-hidden="true">
+              <div class="feature-route-line"></div>
+              <div class="feature-nodes">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-card reveal-up">
+            <div class="feature-icon-wrap feature-icon-wrap-violet">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/></svg>
+            </div>
+            <h3 class="feature-title">Real-Time Fleet Tracking</h3>
+            <p class="feature-text">Monitor every vehicle with GPS precision, geofencing alerts, and live status updates from depot to doorstep.</p>
+          </article>
+
+          <article class="feature-card reveal-up">
+            <div class="feature-icon-wrap feature-icon-wrap-cyan">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="feature-title">Smart ETA Prediction</h3>
+            <p class="feature-text">Machine learning predicts arrival times with 99.8% accuracy, automatically notifying customers of changes.</p>
+          </article>
+
+          <article class="feature-card reveal-up">
+            <div class="feature-icon-wrap feature-icon-wrap-emerald">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="feature-title">Cost Optimization</h3>
+            <p class="feature-text">Reduce per-mile costs through dynamic load balancing, fuel station recommendations, and maintenance-aware dispatch.</p>
+          </article>
+
+          <article class="feature-card reveal-up">
+            <div class="feature-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-title">Proof of Delivery</h3>
+            <p class="feature-text">Capture e-signatures, photos, and delivery notes on mobile for instant, tamper-proof confirmation at every doorstep.</p>
+          </article>
+
+          <article class="feature-card feature-card-wide reveal-up">
+            <div class="feature-content">
+              <div class="feature-icon-wrap feature-icon-wrap-amber">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <h3 class="feature-title">Fuel Efficiency</h3>
+              <p class="feature-text">Cut fuel consumption by up to 32% with eco-routing, idle-time reduction, and predictive acceleration profiles.</p>
+            </div>
+            <div class="feature-chart" aria-hidden="true">
+              <div class="chart-bar" style="--bar-height: 40%"></div>
+              <div class="chart-bar" style="--bar-height: 65%"></div>
+              <div class="chart-bar" style="--bar-height: 45%"></div>
+              <div class="chart-bar" style="--bar-height: 80%"></div>
+              <div class="chart-bar" style="--bar-height: 55%"></div>
+            </div>
+          </article>
+
+          <article class="feature-card reveal-up">
+            <div class="feature-icon-wrap feature-icon-wrap-rose">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="feature-title">Performance Analytics</h3>
+            <p class="feature-text">Turn operational data into strategic insight with dashboards built for logistics executives and dispatch teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: How It Works -->
+    <section class="process-section" id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="process-header">
+          <p class="section-eyebrow reveal-up">How It Works</p>
+          <h2 class="section-title reveal-up" id="process-heading">From Data to Delivery in Five Steps</h2>
+        </div>
+
+        <div class="process-track">
+          <div class="process-line" aria-hidden="true">
+            <div class="process-line-progress"></div>
+          </div>
+          <div class="process-steps">
+            <div class="process-step reveal-up" data-step="1">
+              <div class="process-number">01</div>
+              <div class="process-card">
+                <h3 class="process-title">Analyze</h3>
+                <p class="process-text">Ingest orders, vehicle specs, traffic patterns, and historical performance data.</p>
+              </div>
+            </div>
+            <div class="process-step reveal-up" data-step="2">
+              <div class="process-number">02</div>
+              <div class="process-card">
+                <h3 class="process-title">Optimize</h3>
+                <p class="process-text">AI evaluates millions of route combinations to find the optimal plan.</p>
+              </div>
+            </div>
+            <div class="process-step reveal-up" data-step="3">
+              <div class="process-number">03</div>
+              <div class="process-card">
+                <h3 class="process-title">Dispatch</h3>
+                <p class="process-text">Routes are sent directly to drivers via mobile and in-cab systems.</p>
+              </div>
+            </div>
+            <div class="process-step reveal-up" data-step="4">
+              <div class="process-number">04</div>
+              <div class="process-card">
+                <h3 class="process-title">Track</h3>
+                <p class="process-text">Monitor progress in real time with predictive alerts and geofencing.</p>
+              </div>
+            </div>
+            <div class="process-step reveal-up" data-step="5">
+              <div class="process-number">05</div>
+              <div class="process-card">
+                <h3 class="process-title">Improve</h3>
+                <p class="process-text">ML models learn from every route to continuously improve future plans.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Performance / Statistics -->
+    <section class="stats-section" id="stats" aria-labelledby="stats-heading">
+      <div class="stats-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stats-intro reveal-up">
+            <p class="section-eyebrow">Proven Impact</p>
+            <h2 class="section-title" id="stats-heading">Numbers That Move the Industry</h2>
+            <p class="section-description">Our customers transform logistics performance with measurable, sustained improvements across cost, speed, and reliability.</p>
+          </div>
+          <div class="stat-card stat-card-large reveal-up">
+            <div class="stat-value-wrap">
+              <span class="stat-value" data-count="30" data-suffix="%">0</span>
+              <span class="stat-symbol">↓</span>
+            </div>
+            <p class="stat-label">Reduced Delivery Costs</p>
+          </div>
+          <div class="stat-card reveal-up">
+            <div class="stat-value-wrap">
+              <span class="stat-value" data-count="25" data-suffix="%">0</span>
+              <span class="stat-symbol">↓</span>
+            </div>
+            <p class="stat-label">Less Fuel Consumption</p>
+          </div>
+          <div class="stat-card reveal-up">
+            <div class="stat-value-wrap">
+              <span class="stat-value" data-count="2.5" data-suffix="M+" data-decimals="1">0</span>
+            </div>
+            <p class="stat-label">Optimized Routes</p>
+          </div>
+          <div class="stat-card reveal-up">
+            <div class="stat-value-wrap">
+              <span class="stat-value" data-count="99.8" data-suffix="%" data-decimals="1">0</span>
+            </div>
+            <p class="stat-label">ETA Accuracy</p>
+          </div>
+          <div class="stat-card reveal-up">
+            <div class="stat-value-wrap">
+              <span class="stat-value" data-count="40" data-suffix="%">0</span>
+              <span class="stat-symbol">↓</span>
+            </div>
+            <p class="stat-label">Faster Delivery Times</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Real-Time Visibility -->
+    <section class="visibility-section" id="visibility" aria-labelledby="visibility-heading">
+      <div class="container">
+        <div class="visibility-grid">
+          <div class="visibility-media reveal-left">
+            <div class="visibility-image-wrap">
+              <img src="assets/images/fleet-tracking.webp" alt="Fleet operations control center with live vehicle tracking" loading="lazy" width="1200" height="800">
+              <div class="visibility-pulse" aria-hidden="true"></div>
+              <div class="visibility-card">
+                <span class="visibility-card-label">Live Fleet Status</span>
+                <div class="visibility-card-row">
+                  <span class="status-dot" aria-hidden="true"></span>
+                  <span class="visibility-card-value">487</span>
+                  <span class="visibility-card-unit">vehicles active</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="visibility-content reveal-right">
+            <p class="section-eyebrow">Real-Time Visibility</p>
+            <h2 class="section-title" id="visibility-heading">See Every Vehicle. Predict Every Disruption.</h2>
+            <p class="section-description">Unify fleet, driver, and delivery data into a single source of truth that keeps operations ahead of exceptions.</p>
+            <ul class="visibility-list">
+              <li class="reveal-up">
+                <span class="visibility-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="2"/></svg>
+                </span>
+                <div>
+                  <strong>Live vehicle tracking</strong>
+                  <span>GPS-accurate positions with route adherence and stop verification.</span>
+                </div>
+              </li>
+              <li class="reveal-up">
+                <span class="visibility-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </span>
+                <div>
+                  <strong>Predictive alerts</strong>
+                  <span>Get notified of delays, deviations, and maintenance risks before they escalate.</span>
+                </div>
+              </li>
+              <li class="reveal-up">
+                <span class="visibility-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </span>
+                <div>
+                  <strong>Dynamic rerouting</strong>
+                  <span>Automatically resequence stops when conditions change mid-route.</span>
+                </div>
+              </li>
+              <li class="reveal-up">
+                <span class="visibility-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+                <div>
+                  <strong>Delivery visibility</strong>
+                  <span>Share live tracking and accurate ETAs with customers automatically.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Customer Success / Testimonial -->
+    <section class="testimonial-section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="testimonial-header">
+          <p class="section-eyebrow reveal-up">Customer Success</p>
+          <h2 class="section-title reveal-up" id="testimonials-heading">Built for Operators, Loved by Leaders</h2>
+        </div>
+
+        <div class="testimonial-featured reveal-up">
+          <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+          <blockquote class="testimonial-quote">
+            <p>Stackly Route reduced our empty miles by 28% in the first quarter. The platform doesn't just optimize routes—it gives our dispatchers superpowers.</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="assets/images/testimonial.webp" alt="Sarah Chen, VP of Operations at Velocity Freight" loading="lazy" width="200" height="200">
+            <div class="testimonial-author-info">
+              <strong>Sarah Chen</strong>
+              <span>VP of Operations, Velocity Freight</span>
+            </div>
+          </div>
+          <div class="testimonial-metrics">
+            <div class="testimonial-metric">
+              <span class="testimonial-metric-value">28%</span>
+              <span class="testimonial-metric-label">Empty Mile Reduction</span>
+            </div>
+            <div class="testimonial-metric">
+              <span class="testimonial-metric-value">$1.2M</span>
+              <span class="testimonial-metric-label">Annual Savings</span>
+            </div>
+            <div class="testimonial-metric">
+              <span class="testimonial-metric-value">14%</span>
+              <span class="testimonial-metric-label">Faster Deliveries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Logistics Insights / CTA -->
+    <section class="insights-section" id="insights" aria-labelledby="insights-heading">
+      <div class="insights-bg" aria-hidden="true">
+        <img src="assets/images/logistics-network.webp" alt="" loading="lazy" aria-hidden="true" width="1200" height="800">
+        <div class="insights-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="insights-content">
+          <p class="section-eyebrow reveal-up">Logistics Insights</p>
+          <h2 class="section-title reveal-up" id="insights-heading">Build a Smarter Logistics Network.</h2>
+          <p class="section-description reveal-up">Combine predictive analytics, real-time visibility, and autonomous optimization to design the supply chain of tomorrow.</p>
+          <div class="insights-actions reveal-up">
+            <a href="404.html" class="btn btn-primary btn-lg">Explore Analytics</a>
+            <a href="404.html" class="btn btn-outline btn-lg">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Final CTA -->
+    <section class="final-cta-section" id="final-cta" aria-labelledby="final-cta-heading">
+      <div class="final-cta-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="final-cta-content">
+          <h2 class="section-title reveal-up" id="final-cta-heading">Ready to Optimize Every Mile?</h2>
+          <p class="section-description reveal-up">Join thousands of logistics teams using Stackly Route to cut costs, delight customers, and scale with confidence.</p>
+          <div class="final-cta-actions reveal-up">
+            <a href="404.html" class="btn btn-primary btn-lg">
+              <span>Start Free Trial</span>
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="404.html" class="btn btn-outline btn-lg">Schedule Demo</a>
+          </div>
+          <p class="final-cta-note reveal-up">No credit card required. Full platform access for 14 days.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-bg" aria-hidden="true">
+      <div class="footer-grid"></div>
+      <div class="footer-glow"></div>
+    </div>
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="footer-logo" aria-label="Stackly Route Home"><img src="assets/logo-stackly.webp" alt="Stackly Route" width="220" height="48" loading="lazy"></a>
+        <p class="footer-tagline">Intelligent route optimization for the future of logistics.</p>
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3 class="footer-column-title">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/solutions.html">Solutions</a></li>
+            <li><a href="pages/route-optimization.html">Route Optimization</a></li>
+            <li><a href="pages/analytics.html">Analytics</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Product</h3>
+          <ul class="footer-links">
+            <li><a href="404.html">Route Planning</a></li>
+            <li><a href="404.html">Fleet Tracking</a></li>
+            <li><a href="404.html">Smart ETA</a></li>
+            <li><a href="404.html">Cost Optimization</a></li>
+            <li><a href="404.html">Proof of Delivery</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Company</h3>
+          <ul class="footer-links">
+            <li><a href="404.html">Careers</a></li>
+            <li><a href="404.html">Pricing</a></li>
+            <li><a href="404.html">Resources</a></li>
+            <li><a href="404.html">Blog</a></li>
+            <li><a href="404.html">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-column-title">Newsletter</h3>
+          <p class="footer-newsletter-text">Get the latest on route optimization, fleet intelligence, and logistics insights.</p>
+          <form class="footer-newsletter" id="footerNewsletter" novalidate>
+            <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+            <input type="email" id="footerNewsletterEmail" class="footer-newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="footer-newsletter-btn">Subscribe</button>
+          </form>
+          <p class="footer-newsletter-note" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Stackly Route. All rights reserved.</p>
+        <div class="footer-legal">
+        </div>
+        <div class="footer-social">
+          <a href="404.html" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="404.html" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="404.html" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
