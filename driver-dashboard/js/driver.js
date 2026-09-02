@@ -234,7 +234,7 @@
     var link = document.querySelector('.drv-nav-link[data-view="' + view + '"]');
     var title = link ? link.dataset.title : 'Dashboard';
     if (topbarTitle) topbarTitle.textContent = title;
-    document.title = title + ' | Stackly Route';
+    document.title = title + ' | Stackly';
     setActiveNav(view);
     closeSidebar();
 
