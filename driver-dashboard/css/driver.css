@@ -428,6 +428,7 @@
   flex: 1;
   padding: 1.5rem;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* View transitions */
@@ -836,8 +837,9 @@
   gap: 1.25rem;
   margin-bottom: 1.25rem;
 }
-.drv-chart-row > .drv-chart-panel { min-width: 0; }
-.drv-chart-box { position: relative; width: 100%; }
+.drv-chart-row > * { min-width: 0; }
+.drv-chart-box { position: relative; width: 100%; min-width: 0; }
+.drv-chart-box canvas { max-width: 100%; }
 
 /* ─── Time performance bars ─── */
 .drv-time-bars { display: flex; flex-direction: column; gap: 0.875rem; }
@@ -1569,6 +1571,14 @@
   .drv-route-summary-grid,
   .drv-del-summary-stats {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Route actions stack full-width on small screens */
+  .drv-rs-actions {
+    flex-wrap: wrap;
+  }
+  .drv-rs-actions .drv-btn {
+    flex: 1 1 100%;
   }
 
   /* Next stop meta */
