@@ -97,18 +97,9 @@
   text-decoration: none;
 }
 .drv-logo img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  height: 26px;
+  width: auto;
 }
-.drv-logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  letter-spacing: -0.02em;
-}
-.drv-logo-text .accent { color: var(--color-accent); }
 
 .drv-sidebar-close {
   display: none;

@@ -552,8 +552,8 @@
                 '<div><span class="drv-next-meta-label">Pkgs</span><span class="drv-next-meta-val">' + (state.deliveries[nextStop.num - 1] ? state.deliveries[nextStop.num - 1].packages : '—') + '</span></div>' +
               '</div>' +
               '<div class="drv-next-actions">' +
-                '<a class="drv-btn drv-btn-primary drv-btn-sm drv-btn-flex" href="https://maps.google.com/?q=' + encodeURIComponent(nextStop.address) + '" target="_blank" rel="noopener">' + icon('nav') + ' Navigate</a>' +
-                '<button class="drv-btn drv-btn-outline drv-btn-sm drv-btn-flex" data-nav="route">View Route</button>' +
+                '<a class="drv-btn drv-btn-primary drv-btn-sm drv-btn-flex" href="../404.html">' + icon('nav') + ' Navigate</a>' +
+                '<a class="drv-btn drv-btn-outline drv-btn-sm drv-btn-flex" href="../404.html">View Route</a>' +
               '</div>' +
             '</div>'
           ) : '<p class="drv-empty">No upcoming stop.</p>') +
@@ -678,7 +678,7 @@
     if (routeStatus === 'ready') {
       routeActions = '<button class="drv-btn drv-btn-primary drv-btn-full" id="drv-route-start">Start Route</button>';
     } else if (routeStatus === 'active') {
-      routeActions = '<button class="drv-btn drv-btn-primary drv-btn-flex" id="drv-nav-next">' + icon('nav') + ' Navigate</button><button class="drv-btn drv-btn-outline drv-btn-flex" id="drv-route-pause">Pause</button><button class="drv-btn drv-btn-danger drv-btn-flex" id="drv-route-complete">Complete</button>';
+      routeActions = '<a class="drv-btn drv-btn-primary drv-btn-flex" href="../404.html">' + icon('nav') + ' Navigate</a><button class="drv-btn drv-btn-outline drv-btn-flex" id="drv-route-pause">Pause</button><button class="drv-btn drv-btn-danger drv-btn-flex" id="drv-route-complete">Complete</button>';
     } else if (routeStatus === 'paused') {
       routeActions = '<button class="drv-btn drv-btn-primary drv-btn-flex" id="drv-route-resume">' + icon('nav') + ' Resume</button><button class="drv-btn drv-btn-outline drv-btn-flex" id="drv-route-complete">Complete</button>';
     } else {
@@ -742,11 +742,6 @@
       state.deliveries.forEach(function (d) { if (d.status !== 'delivered') d.status = 'delivered'; });
       navigateTo('route');
       showToast('Route completed!');
-    });
-    var navNext = document.getElementById('drv-nav-next');
-    if (navNext) navNext.addEventListener('click', function () {
-      var ns = getNextStop();
-      if (ns) window.open('https://maps.google.com/?q=' + encodeURIComponent(ns.address), '_blank');
     });
 
     setTimeout(function () {

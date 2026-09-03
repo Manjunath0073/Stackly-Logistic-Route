@@ -94,18 +94,9 @@
   text-decoration: none;
 }
 .dash-logo img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  height: 26px;
+  width: auto;
 }
-.dash-logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  letter-spacing: -0.02em;
-}
-.dash-logo-text .accent { color: var(--color-accent); }
 
 .dash-sidebar-close {
   display: none;
